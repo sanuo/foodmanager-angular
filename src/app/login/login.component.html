@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="text-center">
+    <h1>ログイン</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <form action="post">
+            <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password">パスワード</label>
+                <input type="password" id="password" class="form-control">
+            </div>
+
+            <input type="submit" class="btn btn-success btn-block" value="ログイン">
+        </form>
+
+        <!-- ユーザ登録ページへのリンク -->
+        <p class="mt-2 text-center ">
+            <a href="#" routerLink="/signup" class="text-secondary">新規登録</a>
+        </p>
+    </div>
+</div>
