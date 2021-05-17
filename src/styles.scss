@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    .top-page {
+        .firstview {
+            background-image: url('assets/img/firstview_bg.jpg');
+            background-position: center;
+            background-size: cover;
+            .jumbotron {
+                background-color: rgba(999,999,999,0.5);
+            }
+        }
+    }
+}
