@@ -12,23 +12,23 @@
             <ul class="navbar-nav text-right">
 
                     <!-- ユーザ一覧ページへのリンク -->
-                    <!-- <li class="nav-item">
+                    <li class="nav-item" *ngIf="isSignedIn">
                         <a href="#" class="nav-link text-white">食材管理</a>
-                    </li> -->
+                    </li>
                     <!-- <li class="nav-item"><a href="#" class="nav-link text-white">買い物リスト</a></li> -->
-                    <!-- <li class="nav-item">
+                    <li class="nav-item" *ngIf="isSignedIn">
                         <a href="#" class="nav-link text-white">マスター管理</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">ログアウト</a>
-                    </li> -->
+                    <li class="nav-item" *ngIf="isSignedIn">
+                        <a href="#" class="nav-link text-white" (click)="signOut()">ログアウト</a>
+                    </li>
 
                     <!-- ログインページへのリンク -->
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="!isSignedIn">
                         <a href="#" routerLink="/login" class="nav-link text-white">ログイン</a>
                     </li>
                     <!-- 新規登録ページへのリンク -->
-                    <li class="nav-item">
+                    <li class="nav-item" *ngIf="!isSignedIn">
                         <a href="#" routerLink="/signup" class="nav-link text-white">新規登録</a>
                     </li>
             </ul>
