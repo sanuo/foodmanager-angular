@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { TopPageComponent } from './top-page/top-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
     LoginComponent,
     SignupComponent,
     TopPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
