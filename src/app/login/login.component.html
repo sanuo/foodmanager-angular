@@ -4,15 +4,24 @@
 
 <div class="row">
     <div class="col-sm-6 offset-sm-3">
-        <form action="post">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <!-- Errors -->
+            <div *ngIf="errors" class="alert alert-danger mt-3">
+                <ul>
+                    <li *ngIf="errors?.email">{{ errors.email}}</li>
+                    <li *ngIf="errors?.password">{{ errors.password}}</li>
+                </ul>
+            </div>
+
             <div class="form-group">
                 <label for="email">メールアドレス</label>
-                <input type="email" id="email" class="form-control">
+                <input type="email" id="email" class="form-control" formControlName="email">
             </div>
 
             <div class="form-group">
                 <label for="password">パスワード</label>
-                <input type="password" id="password" class="form-control">
+                <input type="password" id="password" class="form-control" formControlName="password">
             </div>
 
             <input type="submit" class="btn btn-success btn-block" value="ログイン">

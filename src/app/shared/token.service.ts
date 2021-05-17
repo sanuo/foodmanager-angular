@@ -21,7 +21,7 @@ export class TokenService {
   }
 
   // Verify the token
-  isValidToken(){
+  isValidToken() {
      const token = this.getToken();
 
      if(token){
@@ -32,6 +32,7 @@ export class TokenService {
      } else {
         return false;
      }
+     return false;
   }
 
   payload(token) {
