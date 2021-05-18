@@ -7,14 +7,12 @@
         <form action="post" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
             <!-- Errors -->
-            <div *ngIf="errors" class="alert alert-danger mt-3">
-                <ul>
-                    <li *ngIf="errors?.name">{{ errors.name}}</li>
-                    <li *ngIf="errors?.email">{{ errors.email}}</li>
-                    <li *ngIf="errors?.password">{{ errors.password}}</li>
-                    <li *ngIf="errors?.password_confirmation">{{ errors.password_confirmation}}</li>
-                </ul>
-            </div>
+            <ul *ngIf="errors" class="alert alert-danger p-4 pt-2 pb-2">
+                <li *ngIf="errors.name">{{ errors.name}}</li>
+                <li *ngIf="errors.email">{{ errors.email}}</li>
+                <li *ngIf="errors.password">{{ errors.password}}</li>
+                <li *ngIf="errors.password_confirmation">{{ errors.password_confirmation}}</li>
+            </ul>
             <div class="form-group">
                 <label for="text">ニックネーム</label>
                 <input type="text" id="name" class="form-control" formControlName="name">

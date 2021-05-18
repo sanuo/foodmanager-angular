@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errors: {
     email: string,
-    password: string
+    password: string,
+    error: string
   }
 
   constructor(
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         this.errors = error.error;
+        console.dir(this.errors);
       },() => {
         this.authState.setAuthState(true);
         this.loginForm.reset()
