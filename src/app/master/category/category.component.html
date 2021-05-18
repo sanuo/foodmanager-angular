@@ -4,13 +4,13 @@
     </div>
 
     <div>
-        <form action="">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row"><label for="">カテゴリ名</label></th>
-                        <td><input type="text" name="" id="" class="form-control"></td>
-                        <td><input type="submit" class="btn btn-success"></td>
+                        <th scope="row"><label for="name">カテゴリ名</label></th>
+                        <td><input type="text" name="name" id="" class="form-control" formControlName="name"></td>
+                        <td><input type="submit" class="btn btn-success" value="追加"></td>
                     </tr>
                 </tbody>
             </table>
