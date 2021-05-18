@@ -29,4 +29,9 @@ export class MasterService {
   updateCategory(id: number, category: Category): Observable<any>  {
     return this.http.put('http://127.0.0.1:8000/api/masters/category/' + id, category)
   }
+
+  //delete Category
+  deleteCategory(id: number): Observable<any>  {
+    return this.http.delete('http://127.0.0.1:8000/api/masters/category/' + id)
+  }
 }

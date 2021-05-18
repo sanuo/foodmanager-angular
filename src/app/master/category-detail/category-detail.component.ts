@@ -46,7 +46,7 @@ export class CategoryDetailComponent implements OnInit {
   onSubmit() {
     this.masterService.updateCategory(this.id, this.categoryForm.value).subscribe(
       result => {
-        console.log(result)
+        // console.log(result)
         // this.categories.push(result);
       },
       error => {
@@ -57,6 +57,12 @@ export class CategoryDetailComponent implements OnInit {
         this.router.navigate(['/masters']);
       }
     )
+  }
+
+  deleteCategory():void {
+    if (confirm('本当に削除しますか？削除したデータは復旧できません。')) {
+      this.masterService.deleteCategory(this.id).subscribe(() => { this.router.navigate(['/masters']); })
+    }
   }
 
 }
