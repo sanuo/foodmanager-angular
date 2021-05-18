@@ -16,6 +16,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MasterComponent } from './master/master.component';
 import { CategoryComponent } from './master/category/category.component';
 import { FoodComponent } from './master/food/food.component';
+import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FoodComponent } from './master/food/food.component';
     UserProfileComponent,
     MasterComponent,
     CategoryComponent,
-    FoodComponent
+    FoodComponent,
+    CategoryDetailComponent
   ],
   imports: [
     BrowserModule,
