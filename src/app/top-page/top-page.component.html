@@ -4,17 +4,38 @@
             <h1 class="text-success">FoodManager</h1>
         </div>
     </div>
-    <div class="center">
+    <!-- ログイン時以外 -->
+    <div *ngIf="!isSignedIn">
+        <div class="center">
+            <div class="text-center">
+                <p>FoodManagerを使うと、<br>面倒な食材管理が簡単にできます。</p>
+            </div>
+        </div>
+        <!-- ユーザ登録ページへのリンク -->
         <div class="text-center">
-            <p>FoodManagerを使うと、<br>面倒な食材管理が簡単にできます。</p>
+            <a href="#" routerLink="/signup" class="btn btn-success btn-lg mb-3">FoodManagerを始める</a>
+        </div>
+        <!-- ログインページへのリンク -->
+        <div class="text-center">
+            <a href="#" routerLink="/login" class="btn btn-secondary btn-lg mb-3">すでに登録済みの方</a>
         </div>
     </div>
-    <!-- ユーザ登録ページへのリンク -->
-    <div class="text-center">
-        <a href="#" routerLink="/signup" class="btn btn-success btn-lg mb-3">FoodManagerを始める</a>
-    </div>
-    <!-- ログインページへのリンク -->
-    <div class="text-center">
-        <a href="#" routerLink="/login" class="btn btn-secondary btn-lg mb-3">すでに登録済みの方</a>
+
+    <!-- ログイン時 -->
+    <div *ngIf="isSignedIn">
+        <div class="center">
+            <div class="text-center">
+                <p>{{ UserProfile?.name }}さん、こんにちは。</p>
+                <p>食材の管理ってめんどくさいですよね。</p>
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <div class="text-center">
+                <a href="#" routerLink="/signup" class="btn btn-success btn-lg mb-3">食材を管理する</a>
+            </div>
+            <div class="text-center">
+                <a href="#" routerLink="/signup" class="btn btn-secondary btn-lg mb-3">マスターを管理する</a>
+            </div>
+        </div>
     </div>
 </div>
