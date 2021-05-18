@@ -17,15 +17,18 @@ export class TopPageComponent implements OnInit {
     private auth: AuthStateService,
     private authService: AuthService
   ) {
-    this.authService.profileUser().subscribe((data:any) => {
-      this.UserProfile = data;
-    })
   }
 
   ngOnInit(): void {
     this.auth.userAuthState.subscribe(val => {
       this.isSignedIn = val;
     });
+
+    if(this.isSignedIn) {
+      this.authService.profileUser().subscribe((data:any) => {
+        this.UserProfile = data;
+      })
+    }
   }
 
 }
