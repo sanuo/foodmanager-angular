@@ -59,4 +59,10 @@ export class CategoryDetailComponent implements OnInit {
     )
   }
 
+  deleteCategory():void {
+    if (confirm('本当に削除しますか？削除したデータは復旧できません。')) {
+      this.masterService.deleteCategory(this.id).subscribe(() => { this.router.navigate(['/masters']); })
+    }
+  }
+
 }

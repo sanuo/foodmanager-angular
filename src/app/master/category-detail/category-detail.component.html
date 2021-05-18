@@ -28,13 +28,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <!-- {!! Form::submit('更新', ['class' => 'btn btn-success btn-block']) !!} -->
                 <input type="submit" class="btn btn-success btn-block" value="更新">
             </form>  
         </div>
-        <!-- {{-- カテゴリ削除フォーム --}}
-        {!! Form::model($category_master, ['route' => ['category.destroy', $category_master->id], 'method' => 'delete']) !!}
-            {!! Form::submit('削除', ['class' => 'btn btn-danger d-block m-auto']) !!}
-        {!! Form::close() !!} -->
+        <!-- カテゴリ削除フォーム -->
+        <button class="btn btn-danger d-block m-auto" (click)="deleteCategory()">削除</button>
     </div>
 </div>
