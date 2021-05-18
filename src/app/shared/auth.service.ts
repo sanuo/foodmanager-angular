@@ -1,14 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
-// User interface
-export class User {
-  name: String;
-  email: String;
-  password: String;
-  password_confirmation: String
-}
+import { User } from '../model/user.model';
 
 
 @Injectable({
