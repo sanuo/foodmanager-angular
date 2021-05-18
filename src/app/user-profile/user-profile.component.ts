@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/user.model';
+import { AuthStateService } from '../shared/auth-state.service';
 import { AuthService } from '../shared/auth.service';
 
 
@@ -10,16 +12,28 @@ import { AuthService } from '../shared/auth.service';
 })
 
 export class UserProfileComponent implements OnInit {
+  isSignedIn: boolean;
   UserProfile: User;
 
   constructor(
-    public authService: AuthService
+    private auth: AuthStateService,
+    public authService: AuthService,
+    public router: Router
   ) {
-    this.authService.profileUser().subscribe((data:any) => {
-      this.UserProfile = data;
-    })
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.auth.userAuthState.subscribe(val => {
+      this.isSignedIn = val;
+    });
+
+    if(this.isSignedIn) {
+      this.authService.profileUser().subscribe((data:any) => {
+        this.UserProfile = data;
+      })
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
 
 }
