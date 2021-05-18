@@ -1,1 +1,40 @@
-<p>category-detail works!</p>
+<div class="master-page">
+    <div class="text-left">
+        <h2 class="text-success mb-5">カテゴリーマスター編集・削除</h2>
+    </div>
+    <div class="table-category-masters mb-5">
+        <div class="d-flex justify-content-between mb-4">
+            <h4>カテゴリーマスター</h4>
+        </div>
+        <div class="mb-3">
+            <form  [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">カテゴリーID</th>
+                            <td>{{ category?.id }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="name">カテゴリー名</label></th>
+                            <td><input type="text" name="name" class="form-control" *ngIf="category" [(ngModel)]="category.name" formControlName="name"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">登録日</th>
+                            <td>{{ category?.created_at }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">更新日</th>
+                            <td>{{ category?.updated_at }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- {!! Form::submit('更新', ['class' => 'btn btn-success btn-block']) !!} -->
+                <input type="submit" class="btn btn-success btn-block" value="更新">
+            </form>  
+        </div>
+        <!-- {{-- カテゴリ削除フォーム --}}
+        {!! Form::model($category_master, ['route' => ['category.destroy', $category_master->id], 'method' => 'delete']) !!}
+            {!! Form::submit('削除', ['class' => 'btn btn-danger d-block m-auto']) !!}
+        {!! Form::close() !!} -->
+    </div>
+</div>

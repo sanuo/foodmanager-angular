@@ -19,4 +19,14 @@ export class MasterService {
   storeCategory(category: Category): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/masters/category', category)
   }
+
+  //get Category
+  getCategory(id: number): Observable<any>  {
+    return this.http.get('http://127.0.0.1:8000/api/masters/category/' + id)
+  }
+
+  //update Category
+  updateCategory(id: number, category: Category): Observable<any>  {
+    return this.http.put('http://127.0.0.1:8000/api/masters/category/' + id, category)
+  }
 }
