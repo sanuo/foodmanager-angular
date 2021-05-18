@@ -13,6 +13,9 @@ import { TopPageComponent } from './top-page/top-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MasterComponent } from './master/master.component';
+import { CategoryComponent } from './master/category/category.component';
+import { FoodComponent } from './master/food/food.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SignupComponent,
     TopPageComponent,
     NavbarComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MasterComponent,
+    CategoryComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,
