@@ -18,6 +18,8 @@ import { CategoryComponent } from './master/category/category.component';
 import { FoodComponent } from './master/food/food.component';
 import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
 import { FoodDetailComponent } from './master/food-detail/food-detail.component';
+import { ManageListComponent } from './manage/manage-list/manage-list.component';
+import { ManageDetailComponent } from './manage/manage-detail/manage-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FoodDetailComponent } from './master/food-detail/food-detail.component'
     CategoryComponent,
     FoodComponent,
     CategoryDetailComponent,
-    FoodDetailComponent
+    FoodDetailComponent,
+    ManageListComponent,
+    ManageDetailComponent
   ],
   imports: [
     BrowserModule,
