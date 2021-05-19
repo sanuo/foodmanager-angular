@@ -9,7 +9,7 @@
                     <tr>
                         <th scope="row"><label for="name">カテゴリ名</label></th>
                         <td><input type="text" name="name" id="" class="form-control" formControlName="name"></td>
-                        <td><input type="submit" class="btn btn-success" value="追加"></td>
+                        <td class="text-right"><input type="submit" class="btn btn-success" value="追加"></td>
                     </tr>
                 </tbody>
             </table>
@@ -19,11 +19,13 @@
         <thead class="thead-light">
             <tr>
                 <th scope="col">カテゴリー名</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let category of categories">
-                <td><a href="#" routerLink="/masters/category/{{ category.id }}">{{ category.name }}</a></td>
+                <td>{{ category.name }}</td>
+                <td class="text-right"><a href="#" routerLink="/masters/category/{{ category.id }}" class="btn btn-secondary">編集</a></td>
             </tr>
         </tbody>
     </table>

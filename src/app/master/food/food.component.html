@@ -14,7 +14,7 @@
                                 <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
                             </select>
                         </td>
-                        <td><input type="submit" class="btn btn-success" value="登録"></td>
+                        <td class="text-right"><input type="submit" class="btn btn-success" value="追加"></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="">食材名</label></th>
@@ -28,19 +28,17 @@
     <table class="table table-hover" *ngIf="foods">
         <thead class="thead-light">
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">カテゴリーID</th>
                 <th scope="col">カテゴリー名</th>
                 <th scope="col">食材名</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let food of foods">
-                <th scope="row">{{ food.id }}</th>
-                <td>{{ food.category_master_id }}</td>
                 <td>{{ food.category_master_name }}</td>
-                <td>
-                    <a href="#" routerLink="/masters/food/{{ food.id }}">{{ food.name }}</a>
+                <td>{{ food.name }}</td>
+                <td class="text-right">
+                    <a href="#" routerLink="/masters/food/{{ food.id }}" class="btn btn-secondary">編集</a>
                 </td>
             </tr>
         </tbody>
