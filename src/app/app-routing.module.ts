@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { ManageDetailComponent } from './manage/manage-detail/manage-detail.component';
 import { ManageListComponent } from './manage/manage-list/manage-list.component';
 import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
 import { FoodDetailComponent } from './master/food-detail/food-detail.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'manage',
     component: ManageListComponent
+  },
+  {
+    path: 'manage/:id',
+    component: ManageDetailComponent
   }
 ];
 

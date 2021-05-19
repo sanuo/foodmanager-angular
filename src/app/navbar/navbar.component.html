@@ -11,11 +11,13 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav text-right">
 
-                    <!-- ユーザ一覧ページへのリンク -->
+
                     <li class="nav-item" *ngIf="isSignedIn">
-                        <a href="#" class="nav-link text-white">食材管理</a>
+                        <a href="#" routerLink="/manage" class="nav-link text-white">食材管理</a>
                     </li>
-                    <!-- <li class="nav-item"><a href="#" class="nav-link text-white">買い物リスト</a></li> -->
+                    <li class="nav-item" *ngIf="isSignedIn">
+                        <a href="#" routerLink="/masters" class="nav-link text-white">買い物リスト</a>
+                    </li>
                     <li class="nav-item" *ngIf="isSignedIn">
                         <a href="#" routerLink="/masters" class="nav-link text-white">マスター管理</a>
                     </li>
