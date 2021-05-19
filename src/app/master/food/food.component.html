@@ -3,23 +3,27 @@
         <h4>食材マスター</h4>
     </div>
     
-    <!-- <div>
-        <form action="">
+    <div>
+        <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
             <table class="table">
                 <tbody>
                     <tr>
                         <th scope="row"><label for="">カテゴリー名</label></th>
-                        <td>{!! Form::select('category_master_id', $category_array, null, ['placeholder' => '選択してください', 'class' => 'form-control']) !!}</td>
-                        <td>{!! Form::submit('登録', ['class' => 'btn btn-success']) !!}</td>
+                        <td>
+                            <select *ngIf="categories" name="category_master_id" id="" class="form-select" formControlName="category_master_id">
+                                <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+                            </select>
+                        </td>
+                        <td><input type="submit" class="btn btn-success" value="登録"></td>
                     </tr>
                     <tr>
-                        <th scope="row">{!! Form::label('name', '食材名') !!}</th>
-                        <td>{!! Form::text('name', null, ['class' => 'form-control']) !!}</td>
+                        <th scope="row"><label for="">食材名</label></th>
+                        <td><input type="text" class="form-control" formControlName="name"></td>
                     </tr>
                 </tbody>
             </table>
         </form>
-    </div> -->
+    </div>
     <!-- <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
         <table class="table">
             <tbody>
