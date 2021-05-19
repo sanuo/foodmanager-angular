@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Category } from 'src/app/model/category.model';
 import { Food } from 'src/app/model/food.model';
@@ -10,6 +10,7 @@ import { MasterService } from 'src/app/shared/master/master.service';
   styleUrls: ['./food.component.scss']
 })
 export class FoodComponent implements OnInit {
+  @Input() changeFlag: boolean;
 
   foods: Food[];
   categories: Category[];
@@ -52,4 +53,11 @@ export class FoodComponent implements OnInit {
     )
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    // 別コンポーネントの変化を検知して登録済みのカテゴリーマスター取得
+    this.masterService.getCategories().subscribe((data:any) => {
+      this.categories = data;
+      // console.dir(data);
+    })
+  }
 }

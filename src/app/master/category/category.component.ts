@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Category } from 'src/app/model/category.model';
 import { MasterService } from 'src/app/shared/master/master.service';
@@ -9,7 +9,9 @@ import { MasterService } from 'src/app/shared/master/master.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  
+
+  @Output() changeEvent = new EventEmitter<string>();
+
   categories: Category[];
 
   categoryForm: FormGroup;
@@ -34,6 +36,7 @@ export class CategoryComponent implements OnInit {
       result => {
         // console.log(result)
         this.categories.push(result);
+        this.changeFlag();
       },
       error => {
         // this.errors = error.error;
@@ -42,4 +45,7 @@ export class CategoryComponent implements OnInit {
     )
   }
 
+  changeFlag() {
+    this.changeEvent.emit();
+  }
 }

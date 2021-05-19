@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterComponent implements OnInit {
 
+  changeFlag = true;
+
+  change() {
+    if(this.changeFlag) {
+      this.changeFlag = false;
+    } else {
+      this.changeFlag = true;
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
