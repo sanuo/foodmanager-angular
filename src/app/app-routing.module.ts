@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
+import { FoodDetailComponent } from './master/food-detail/food-detail.component';
 import { MasterComponent } from './master/master.component';
 import { SignupComponent } from './signup/signup.component';
 import { TopPageComponent } from './top-page/top-page.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'masters/category/:id',
     component: CategoryDetailComponent
+  },
+  {
+    path: 'masters/food/:id',
+    component: FoodDetailComponent
   }
 ];
 

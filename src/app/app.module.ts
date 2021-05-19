@@ -17,6 +17,7 @@ import { MasterComponent } from './master/master.component';
 import { CategoryComponent } from './master/category/category.component';
 import { FoodComponent } from './master/food/food.component';
 import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
+import { FoodDetailComponent } from './master/food-detail/food-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryDetailComponent } from './master/category-detail/category-detai
     MasterComponent,
     CategoryComponent,
     FoodComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    FoodDetailComponent
   ],
   imports: [
     BrowserModule,

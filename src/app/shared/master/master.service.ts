@@ -45,4 +45,14 @@ export class MasterService {
   storeFood(food: Food): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/masters/food', food)
   }
+
+  //get Food
+  getFood(id: number): Observable<any>  {
+    return this.http.get('http://127.0.0.1:8000/api/masters/food/' + id)
+  }
+
+  //update Category
+  updateFood(id: number, food: Food): Observable<any>  {
+    return this.http.put('http://127.0.0.1:8000/api/masters/food/' + id, food)
+  }
 }

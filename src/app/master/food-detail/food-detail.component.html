@@ -1,0 +1,47 @@
+<div class="master-page">
+    <div class="text-left">
+        <h2 class="text-success mb-5">食材マスター編集・削除</h2>
+    </div>
+    <div class="table-category-masters mb-5">
+        <div class="mb-3">
+            <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">カテゴリーID</th>
+                            <td>
+                                <select *ngIf="categories" name="category_master_id" id="" class="form-select" formControlName="category_master_id">
+                                    <ng-container *ngFor="let category of categories">
+                                        <option *ngIf="category.id == food?.category_master_id" [(ngModel)]="category.id" selected [ngModelOptions]="{standalone: true}" ngDefaultControl>{{ category.name }}</option>
+                                        <option *ngIf="category.id != food?.category_master_id" [(ngModel)]="category.id" [ngModelOptions]="{standalone: true}" ngDefaultControl>{{ category.name }}</option>
+                                    </ng-container>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">食材ID</th>
+                            <td>{{ food?.id }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">食材名</label></th>
+                            <td><input type="text" class="form-control" *ngIf="food" [(ngModel)]="food.name" formControlName="name"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">登録日</th>
+                            <td>{{ food?.updated_at }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">更新日</th>
+                            <td>{{ food?.updated_at }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" class="btn btn-success btn-block" value="更新">
+            </form>
+        </div>
+        <!-- {{-- 食材削除フォーム --}}
+        {!! Form::model($food_master, ['route' => ['food.destroy', $food_master->id], 'method' => 'delete']) !!}
+            {!! Form::submit('削除', ['class' => 'btn btn-danger d-block m-auto']) !!}
+        {!! Form::close() !!} -->
+    </div>
+</div>
