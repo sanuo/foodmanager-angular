@@ -43,11 +43,6 @@ export class FoodDetailComponent implements OnInit {
   getFood(): void {
     this.masterService.getFood(this.id).subscribe(
       result => {
-        this.masterService.getCategory(result.category_master_id).subscribe(
-          (data:any) => {
-            result["category_master_name"] = data.name;
-          }
-        )
         this.food = result;
       },
       error => {

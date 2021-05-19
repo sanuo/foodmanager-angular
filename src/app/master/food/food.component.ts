@@ -29,13 +29,6 @@ export class FoodComponent implements OnInit {
   ngOnInit(): void {
     // 登録済みのフードマスター取得
     this.masterService.getFoods().subscribe((data:any) => {
-      data.forEach(element => {
-        this.masterService.getCategory(element.category_master_id).subscribe(
-          (data:any) => {
-            element["category_master_name"] = data.name;
-          }
-        )
-      });
       // console.dir(data);
       this.foods = data;
     })
@@ -50,12 +43,6 @@ export class FoodComponent implements OnInit {
   onSubmit() {
     this.masterService.storeFood(this.foodForm.value).subscribe(
       result => {
-        console.log(result.id)
-        this.masterService.getCategory(result.category_master_id).subscribe(
-          (data:any) => {
-            result["category_master_name"] = data.name;
-          }
-        )
         this.foods.push(result);
       },
       error => {
