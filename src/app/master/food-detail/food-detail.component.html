@@ -10,11 +10,8 @@
                         <tr>
                             <th scope="row">カテゴリーID</th>
                             <td>
-                                <select *ngIf="categories" name="category_master_id" id="" class="form-select" formControlName="category_master_id">
-                                    <ng-container *ngFor="let category of categories">
-                                        <option *ngIf="category.id == food?.category_master_id" [(ngModel)]="category.id" selected [ngModelOptions]="{standalone: true}" ngDefaultControl>{{ category.name }}</option>
-                                        <option *ngIf="category.id != food?.category_master_id" [(ngModel)]="category.id" [ngModelOptions]="{standalone: true}" ngDefaultControl>{{ category.name }}</option>
-                                    </ng-container>
+                                <select *ngIf="food" name="category_master_id" id="" class="form-select" formControlName="category_master_id" [(ngModel)]="food.category_master_id">
+                                    <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
                                 </select>
                             </td>
                         </tr>
