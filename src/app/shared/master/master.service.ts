@@ -51,8 +51,13 @@ export class MasterService {
     return this.http.get('http://127.0.0.1:8000/api/masters/food/' + id)
   }
 
-  //update Category
+  //update Food
   updateFood(id: number, food: Food): Observable<any>  {
     return this.http.put('http://127.0.0.1:8000/api/masters/food/' + id, food)
+  }
+
+  //delete Food
+  deleteFood(id: number): Observable<any>  {
+    return this.http.delete('http://127.0.0.1:8000/api/masters/food/' + id)
   }
 }

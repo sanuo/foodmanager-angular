@@ -39,9 +39,7 @@
                 <input type="submit" class="btn btn-success btn-block" value="更新">
             </form>
         </div>
-        <!-- {{-- 食材削除フォーム --}}
-        {!! Form::model($food_master, ['route' => ['food.destroy', $food_master->id], 'method' => 'delete']) !!}
-            {!! Form::submit('削除', ['class' => 'btn btn-danger d-block m-auto']) !!}
-        {!! Form::close() !!} -->
+        <!-- 食材削除フォーム -->
+        <button class="btn btn-danger d-block m-auto" (click)="deleteFood()">削除</button>
     </div>
 </div>
