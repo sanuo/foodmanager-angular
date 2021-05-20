@@ -1,1 +1,48 @@
-<p>manage-edit works!</p>
+<div class="manage-page">
+    <div class="text-left">
+        <h2 class="text-success mb-5">食材管理</h2>
+    </div>
+    <div class="table-category-masters mb-5">
+        <div class="d-flex justify-content-between mb-4">
+            <h4>食材編集</h4>
+        </div>
+        <div>
+            <form [formGroup]="foodManageForm" (ngSubmit)="onSubmit()">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="">カテゴリー名</label></th>
+                            <td>
+                                <select *ngIf="foodManage" name="category_master_id" id="" class="form-select" formControlName="category_master_id" [(ngModel)]="foodManage.category_master_id" (change)="setFoodMasters($event.target)">
+                                    <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">食材名</label></th>
+                            <td>
+                                <select *ngIf="foodManage" name="food_master_id" id="" class="form-select" formControlName="food_master_id" [(ngModel)]="foodManage.food_master_id">
+                                    <option *ngFor="let food of foods" [ngValue]="food.id">{{ food.name }}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">数量</label></th>
+                            <td><input type="number" class="form-control" formControlName="quantity" *ngIf="foodManage" [(ngModel)]="foodManage.quantity"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">単位</label></th>
+                            <td><input type="text" class="form-control" formControlName="unit" *ngIf="foodManage" [(ngModel)]="foodManage.unit"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">消費期限</label></th>
+                            <td><input type="date" class="form-control" formControlName="expiration_date" *ngIf="foodManage" [(ngModel)]="foodManage.expiration_date"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" value="登録" class="btn btn-success btn-block">
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -20,8 +20,6 @@ export class ManageCreateComponent implements OnInit {
   categories: Category[];
   foods: Food[];
 
-  selectedValue = 0;
-
   constructor(
     public fb: FormBuilder,
     private masterService: MasterService,

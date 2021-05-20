@@ -21,17 +21,17 @@ export class MasterService {
     return this.http.post('http://127.0.0.1:8000/api/masters/category', category)
   }
 
-  //get Category
+  // get Category
   getCategory(id: number): Observable<any>  {
     return this.http.get('http://127.0.0.1:8000/api/masters/category/' + id)
   }
 
-  //update Category
+  // update Category
   updateCategory(id: number, category: Category): Observable<any>  {
     return this.http.put('http://127.0.0.1:8000/api/masters/category/' + id, category)
   }
 
-  //delete Category
+  // delete Category
   deleteCategory(id: number): Observable<any>  {
     return this.http.delete('http://127.0.0.1:8000/api/masters/category/' + id)
   }
@@ -51,7 +51,7 @@ export class MasterService {
     return this.http.post('http://127.0.0.1:8000/api/masters/food', food)
   }
 
-  //get Food
+  // get Food
   getFood(id: number): Observable<any>  {
     return this.http.get('http://127.0.0.1:8000/api/masters/food/' + id)
   }
