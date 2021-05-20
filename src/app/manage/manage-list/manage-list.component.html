@@ -18,31 +18,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
+                <tr *ngFor="let foodManage of foodManages">
+                    <td>{{ foodManage.food_master_name }}</td>
+                    <td>{{ foodManage.quantity }}</td>
+                    <td>{{ foodManage.unit }}</td>
+                    <td>{{ foodManage.expiration_date }}</td>
                     <td class="text-right">
-                        <a href="#" routerLink="1" class="btn btn-secondary">編集</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td class="text-right">
-                        <a href="#" routerLink="2" class="btn btn-secondary">編集</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td class="text-right">
-                        <a href="#" routerLink="3" class="btn btn-secondary">編集</a>
+                        <a href="#" routerLink="{{ foodManage.id }}" class="btn btn-secondary">編集</a>
                     </td>
                 </tr>
             </tbody>

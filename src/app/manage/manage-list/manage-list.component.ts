@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodManage } from 'src/app/model/food-manage.model';
+import { FoodManageService } from 'src/app/shared/food-manage/food-manage.service';
 
 @Component({
   selector: 'app-manage-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageListComponent implements OnInit {
 
-  constructor() { }
+  foodManages: FoodManage[];
+
+  constructor(
+    private foodManageService: FoodManageService
+  ) { }
 
   ngOnInit(): void {
+    // 登録済みの食材管理データを取得
+    this.foodManageService.getFoodManages().subscribe((data:any) => {
+      console.dir(data);
+      this.foodManages = data;
+    })
   }
 
 }
