@@ -22,11 +22,16 @@ export class FoodManageService {
 
   // store FoodManage
   storeFoodManage(foodManage: FoodManage): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/api/food_manages/', foodManage)
+    return this.http.post('http://127.0.0.1:8000/api/food_manages/', foodManage);
   }
 
-  //update Category
+  //update FoodManage
   updateFoodManage(id: number, foodManage: FoodManage): Observable<any>  {
-    return this.http.put('http://127.0.0.1:8000/api/food_manages/' + id, foodManage)
+    return this.http.put('http://127.0.0.1:8000/api/food_manages/' + id, foodManage);
+  }
+
+  //delete FoodManage
+  deleteFoodManage(id: number): Observable<any>  {
+    return this.http.delete('http://127.0.0.1:8000/api/food_manages/' + id);
   }
 }

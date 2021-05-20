@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FoodManage } from 'src/app/model/food-manage.model';
 import { FoodManageService } from 'src/app/shared/food-manage/food-manage.service';
 
@@ -16,6 +16,7 @@ export class ManageDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private foodManageService: FoodManageService
   ) { }
 
@@ -32,5 +33,11 @@ export class ManageDetailComponent implements OnInit {
         console.log(error.error);
       }
     );
+  }
+
+  deleteFoodManage():void {
+    if (confirm('本当に削除しますか？削除したデータは復旧できません。')) {
+      this.foodManageService.deleteFoodManage(this.id).subscribe(() => { this.router.navigate(['/manage']); })
+    }
   }
 }
