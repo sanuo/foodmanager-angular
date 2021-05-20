@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { ManageCreateComponent } from './manage/manage-create/manage-create.component';
 import { ManageDetailComponent } from './manage/manage-detail/manage-detail.component';
+import { ManageEditComponent } from './manage/manage-edit/manage-edit.component';
 import { ManageListComponent } from './manage/manage-list/manage-list.component';
 import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
 import { FoodDetailComponent } from './master/food-detail/food-detail.component';
@@ -44,9 +46,17 @@ const routes: Routes = [
     component: ManageListComponent
   },
   {
+    path: 'manage/create',
+    component: ManageCreateComponent
+  },
+  {
     path: 'manage/:id',
     component: ManageDetailComponent
-  }
+  },
+  {
+    path: 'manage/:id/edit',
+    component: ManageEditComponent
+  },
 ];
 
 @NgModule({
