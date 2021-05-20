@@ -13,4 +13,9 @@ export class FoodManageService {
   getFoodManages(): Observable<any> {
     return this.http.get('http://127.0.0.1:8000/api/food_manages/');
   }
+
+  //get FoodManage
+  getFoodManage(id: number): Observable<any>  {
+    return this.http.get('http://127.0.0.1:8000/api/food_manages/' + id);
+  }
 }

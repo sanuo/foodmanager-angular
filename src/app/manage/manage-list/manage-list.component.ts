@@ -18,7 +18,6 @@ export class ManageListComponent implements OnInit {
   ngOnInit(): void {
     // 登録済みの食材管理データを取得
     this.foodManageService.getFoodManages().subscribe((data:any) => {
-      console.dir(data);
       this.foodManages = data;
     })
   }

@@ -11,31 +11,31 @@
             <tbody>
                 <tr>
                     <th scope="row">食材ID</th>
-                    <td>1</td>
+                    <td>{{ foodManage?.id }}</td>
                 </tr>
                 <tr>
                     <th scope="row">食材名</th>
-                    <td>テスト</td>
+                    <td>{{ foodManage?.food_master_name }}</td>
                 </tr>
                 <tr>
                     <th scope="row">数量</th>
-                    <td>テスト</td>
+                    <td>{{ foodManage?.quantity }}</td>
                 </tr>
                 <tr>
                     <th scope="row">単位</th>
-                    <td>テスト</td>
+                    <td>{{ foodManage?.unit }}</td>
                 </tr>
                 <tr>
                     <th scope="row">消費期限</th>
-                    <td>テスト</td>
+                    <td>{{ foodManage?.expiration_date }}</td>
                 </tr>
                 <tr>
                     <th scope="row">登録日</th>
-                    <td>テスト</td>
+                    <td>{{ foodManage?.created_at }}</td>
                 </tr>
                 <tr>
                     <th scope="row">更新日</th>
-                    <td>テスト</td>
+                    <td>{{ foodManage?.updated_at }}</td>
                 </tr>
             </tbody>
         </table>
