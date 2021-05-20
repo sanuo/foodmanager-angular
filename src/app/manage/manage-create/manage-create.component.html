@@ -7,38 +7,38 @@
             <h4>食材登録</h4>
         </div>
         <div>
-            <form action="">
+            <form [formGroup]="foodManageForm" (ngSubmit)="onSubmit()">
                 <table class="table">
                     <tbody>
                         <tr>
                             <th scope="row"><label for="">カテゴリー名</label></th>
                             <td>
-                                <select name="" id="" class="form-select">
-                                    <option value="1">１</option>
-                                    <option value="1">１</option>
+                                <select name="" id="" class="form-select" (change)="setFoodMasters($event.target)" formControlName="category_master_id">
+                                    <option value="" disabled>選択してください</option>
+                                    <option *ngFor="let category of categories;" value="{{category.id}}">{{ category.name }}</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="">食材名</label></th>
                             <td>
-                                <select name="" id="" class="form-select">
-                                    <option value="1">１</option>
-                                    <option value="1">１</option>
+                                <select name="" id="" class="form-select" formControlName="food_master_id">
+                                    <option value="" disabled>選択してください</option>
+                                    <option *ngFor="let food of foods" [ngValue]="food.id">{{ food.name }}</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="">数量</label></th>
-                            <td><input type="number" class="form-control"></td>
+                            <td><input type="number" class="form-control" formControlName="quantity"></td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="">単位</label></th>
-                            <td><input type="text" class="form-control"></td>
+                            <td><input type="text" class="form-control" formControlName="unit"></td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="">単位</label></th>
-                            <td><input type="date" class="form-control"></td>
+                            <th scope="row"><label for="">消費期限</label></th>
+                            <td><input type="date" class="form-control" formControlName="expiration_date"></td>
                         </tr>
                     </tbody>
                 </table>

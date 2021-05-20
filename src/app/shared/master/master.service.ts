@@ -41,6 +41,11 @@ export class MasterService {
     return this.http.get('http://127.0.0.1:8000/api/masters/food');
   }
 
+  // get Foods By CategoryId
+  getFoodsByCategoryId(category_master_id: number): Observable<any> {
+    return this.http.post('http://127.0.0.1:8000/api/masters/food/fetch', category_master_id);
+  }
+
   // store Category
   storeFood(food: Food): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/masters/food', food)
