@@ -22,6 +22,8 @@ import { ManageListComponent } from './manage/manage-list/manage-list.component'
 import { ManageDetailComponent } from './manage/manage-detail/manage-detail.component';
 import { ManageCreateComponent } from './manage/manage-create/manage-create.component';
 import { ManageEditComponent } from './manage/manage-edit/manage-edit.component';
+import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
+import { ShoppingDetailComponent } from './shopping/shopping-detail/shopping-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ManageEditComponent } from './manage/manage-edit/manage-edit.component'
     ManageListComponent,
     ManageDetailComponent,
     ManageCreateComponent,
-    ManageEditComponent
+    ManageEditComponent,
+    ShoppingListComponent,
+    ShoppingDetailComponent
   ],
   imports: [
     BrowserModule,
