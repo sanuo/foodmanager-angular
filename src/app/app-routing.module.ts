@@ -8,6 +8,7 @@ import { ManageListComponent } from './manage/manage-list/manage-list.component'
 import { CategoryDetailComponent } from './master/category-detail/category-detail.component';
 import { FoodDetailComponent } from './master/food-detail/food-detail.component';
 import { MasterComponent } from './master/master.component';
+import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 import { SignupComponent } from './signup/signup.component';
 import { TopPageComponent } from './top-page/top-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'manage/:id/edit',
     component: ManageEditComponent
+  },
+  {
+    path: 'shopping',
+    component: ShoppingListComponent
   },
 ];
 
