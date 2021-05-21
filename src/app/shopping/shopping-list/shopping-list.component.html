@@ -18,20 +18,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td class="text-right">
-                        <a href="#" class="btn btn-secondary">詳細</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
-                    <td>テスト</td>
+                <tr *ngFor="let shoppingList of shoppingLists">
+                    <td>{{ shoppingList.title }}</td>
+                    <td>{{ shoppingList.created_at }}</td>
+                    <td>{{ shoppingList.updated_at }}</td>
+                    <td>{{ shoppingList.status_label }}</td>
                     <td class="text-right">
                         <a href="#" class="btn btn-secondary">詳細</a>
                     </td>

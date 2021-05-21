@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingList } from 'src/app/model/shopping-list.model';
+import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingListComponent implements OnInit {
 
-  constructor() { }
+  shoppingLists: ShoppingList[];
+
+  constructor(
+    private shoppingService: ShoppingService
+  ) { }
 
   ngOnInit(): void {
+    // 登録済みの食材管理データを取得
+    this.shoppingService.getShoppingLists().subscribe((data:any) => {
+      this.shoppingLists = data;
+    })
   }
 
 }
