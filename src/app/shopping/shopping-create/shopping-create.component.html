@@ -1,1 +1,25 @@
-<p>shopping-create works!</p>
+<div class="manage-page">
+    <div class="text-left">
+        <h2 class="text-success mb-5">買い物リスト管理</h2>
+    </div>
+    <div class="table-category-masters mb-5">
+        <div class="d-flex justify-content-between mb-4">
+            <h4>買い物リスト登録</h4>
+        </div>
+        <div>
+            <form [formGroup]="shoppingListForm" (ngSubmit)="onSubmit()">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="">タイトル</label></th>
+                            <td><input type="text" class="form-control" formControlName="title"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-block text-center">
+                    <input type="submit" value="登録" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
