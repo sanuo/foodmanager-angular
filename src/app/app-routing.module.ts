@@ -10,6 +10,7 @@ import { FoodDetailComponent } from './master/food-detail/food-detail.component'
 import { MasterComponent } from './master/master.component';
 import { ShoppingCreateComponent } from './shopping/shopping-create/shopping-create.component';
 import { ShoppingDetailComponent } from './shopping/shopping-detail/shopping-detail.component';
+import { ShoppingItemEditComponent } from './shopping/shopping-detail/shopping-item-edit/shopping-item-edit.component';
 import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 import { SignupComponent } from './signup/signup.component';
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'shopping/:id/edit',
     component: ShoppingEditComponent
+  },
+  {
+    path: 'shopping/item/:id/edit',
+    component: ShoppingItemEditComponent
   },
 ];
 

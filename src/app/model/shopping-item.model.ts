@@ -2,6 +2,7 @@
 export interface ShoppingItem {
   id: number;
   shopping_list_id: number;
+  category_master_id: number;
   food_master_id: number;
   food_master_name: string;
   quantity: string;

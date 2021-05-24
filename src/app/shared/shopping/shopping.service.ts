@@ -36,13 +36,18 @@ export class ShoppingService {
     return this.http.delete('http://127.0.0.1:8000/api/shopping_lists/' + id);
   }
 
-  // get ShoppingItems
-  getShoppingItems(): Observable<any> {
-    return this.http.get('http://127.0.0.1:8000/api/shopping_list_items/');
+  // get ShoppingItem
+  getShoppingItem(id: number): Observable<any> {
+    return this.http.get('http://127.0.0.1:8000/api/shopping_list_items/' + id);
   }
 
   // store ShoppingItem
   storeShoppingItem(shoppingItem: ShoppingItem): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/shopping_list_items/', shoppingItem);
+  }
+
+  //update ShoppingItem
+  updateShoppingItem(id: number, shoppingItem: ShoppingItem): Observable<any>  {
+    return this.http.put('http://127.0.0.1:8000/api/shopping_list_items/' + id, shoppingItem);
   }
 }

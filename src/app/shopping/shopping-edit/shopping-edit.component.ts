@@ -26,7 +26,7 @@ export class ShoppingEditComponent implements OnInit {
       status: 1,
       status_label: '登録済'
     }
-  ]
+  ];
 
   constructor(
     private route: ActivatedRoute,

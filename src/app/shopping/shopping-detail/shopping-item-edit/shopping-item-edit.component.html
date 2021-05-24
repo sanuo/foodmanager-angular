@@ -1,1 +1,53 @@
-<p>shopping-item-edit works!</p>
+<div class="manage-page">
+    <div class="text-left">
+        <h2 class="text-success mb-5">買い物リスト管理</h2>
+    </div>
+    <div class="table-category-masters mb-5">
+        <div class="d-flex justify-content-between mb-4">
+            <h4>買い物リスト編集</h4>
+        </div>
+        <form [formGroup]="shoppingItemForm" (ngSubmit)="onSubmit()">
+            <table class="table">
+                <tbody>
+                        <tr>
+                            <th scope="row"><label for="">カテゴリー名</label></th>
+                            <td>
+                                <select *ngIf="shoppingItem" name="category_master_id" id="" class="form-select" formControlName="category_master_id" [(ngModel)]="shoppingItem.category_master_id" (change)="setFoodMasters($event.target)">
+                                    <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">食材名</label></th>
+                            <td>
+                                <select *ngIf="shoppingItem" name="food_master_id" id="" class="form-select" formControlName="food_master_id" [(ngModel)]="shoppingItem.food_master_id">
+                                    <option *ngFor="let food of foods" [ngValue]="food.id">{{ food.name }}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">数量</label></th>
+                            <td><input type="number" class="form-control" formControlName="quantity" *ngIf="shoppingItem" [(ngModel)]="shoppingItem.quantity"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="">単位</label></th>
+                            <td><input type="text" class="form-control" formControlName="unit" *ngIf="shoppingItem" [(ngModel)]="shoppingItem.unit"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ステータス</th>
+                            <td>
+                                <select *ngIf="shoppingItem" name="" id="" class="form-select" formControlName="status" [(ngModel)]="shoppingItem.status">
+                                    <option *ngFor="let status of status_lists" value="{{ status.status }}">{{ status.status_label }}</option>
+                                </select>
+                            </td>
+                        </tr>
+                    <!-- {!! Form::hidden('shopping_list_id', $shopping_list_item->shopping_list_id) !!} -->
+                </tbody>
+            </table>
+            <div class="d-block text-center">
+                <input type="submit" class="btn btn-success" value="更新">
+            </div>
+            <input type="hidden" *ngIf="shoppingItem" [(ngModel)]="shoppingItem.shopping_list_id" formControlName="shopping_list_id">
+        </form>
+    </div>
+</div>
