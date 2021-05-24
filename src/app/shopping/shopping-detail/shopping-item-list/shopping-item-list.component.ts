@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ShoppingItem } from 'src/app/model/shopping-item.model';
 import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
@@ -9,6 +9,7 @@ import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
   styleUrls: ['./shopping-item-list.component.scss']
 })
 export class ShoppingItemListComponent implements OnInit {
+  @Input() changeFlag: boolean;
 
   shoppingItems: ShoppingItem[];
 
@@ -33,5 +34,9 @@ export class ShoppingItemListComponent implements OnInit {
         console.log(error.error);
       }
     );
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.getShoppingItems();
   }
 }

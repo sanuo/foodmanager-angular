@@ -31,6 +31,6 @@
     <div class="d-flex justify-content-between mb-4">
         <h4>買い物リストアイテム一覧</h4>
     </div>
-    <app-shopping-item-create></app-shopping-item-create>
-    <app-shopping-item-list></app-shopping-item-list>
+    <app-shopping-item-create (changeEvent)="change()"></app-shopping-item-create>
+    <app-shopping-item-list [changeFlag]="changeFlag"></app-shopping-item-list>
 </div>

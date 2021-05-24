@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ShoppingItem } from 'src/app/model/shopping-item.model';
 import { ShoppingList } from 'src/app/model/shopping-list.model';
 
 @Injectable({
@@ -38,5 +39,10 @@ export class ShoppingService {
   // get ShoppingItems
   getShoppingItems(): Observable<any> {
     return this.http.get('http://127.0.0.1:8000/api/shopping_list_items/');
+  }
+
+  // store ShoppingItem
+  storeShoppingItem(shoppingItem: ShoppingItem): Observable<any> {
+    return this.http.post('http://127.0.0.1:8000/api/shopping_list_items/', shoppingItem);
   }
 }

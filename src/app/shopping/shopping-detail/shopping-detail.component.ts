@@ -10,6 +10,16 @@ import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
 })
 export class ShoppingDetailComponent implements OnInit {
 
+  changeFlag = true;
+
+  change() {
+    if(this.changeFlag) {
+      this.changeFlag = false;
+    } else {
+      this.changeFlag = true;
+    }
+  }
+
   shoppingList: ShoppingList;
 
   id:number = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
@@ -21,6 +31,7 @@ export class ShoppingDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getShoppingList();
+    console.log(this.changeFlag);
   }
 
   getShoppingList(): void {
