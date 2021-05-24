@@ -55,4 +55,9 @@ export class ShoppingService {
   deleteShoppingItem(id: number): Observable<any>  {
     return this.http.delete('http://127.0.0.1:8000/api/shopping_list_items/' + id);
   }
+
+  //delete ShoppingItem
+  batchRegister(shoppingList: ShoppingList): Observable<any>  {
+    return this.http.post('http://127.0.0.1:8000/api/shopping_lists/batch_register/', shoppingList);
+  }
 }

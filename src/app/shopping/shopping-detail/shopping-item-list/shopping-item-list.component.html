@@ -28,4 +28,7 @@
             {!! Form::hidden('shopping_list_id', $shopping_list->id, ['class' => 'form-control']) !!}
             {!! Form::submit('食材管理に一括登録', ['class' => 'btn btn-success d-block m-auto']) !!}
     {!! Form::close() !!} -->
+    <form [formGroup]="shoppingListForm" (ngSubmit)="onSubmit()">
+        <input type="submit" value="食材管理に一括登録" class="btn btn-success d-block m-auto">
+    </form>
 </div>
