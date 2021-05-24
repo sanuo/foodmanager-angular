@@ -69,4 +69,10 @@ export class ShoppingEditComponent implements OnInit {
       }
     )
   }
+
+  deleteShoppingList():void {
+    if (confirm('本当に削除しますか？削除したデータは復旧できません。')) {
+      this.shoppingService.deleteShoppingList(this.id).subscribe(() => { this.router.navigate(['/shopping']); })
+    }
+  }
 }

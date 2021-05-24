@@ -36,11 +36,12 @@
             </div>
         </form>
         
-        <!-- <div class="d-block text-center">
-            {{-- 買い物リスト削除フォーム --}}
+        <div class="d-block text-center">
+            <!-- {{-- 買い物リスト削除フォーム --}}
             {!! Form::model($shopping_list, ['route' => ['shopping_lists.destroy', $shopping_list->id], 'method' => 'delete']) !!}
                 {!! Form::submit('削除', ['class' => 'btn btn-danger mt-3']) !!}
-            {!! Form::close() !!}
-        </div> -->
+            {!! Form::close() !!} -->
+            <button class="btn btn-danger mt-3" (click)="deleteShoppingList()">削除</button>
+        </div>
     </div>
 </div>
