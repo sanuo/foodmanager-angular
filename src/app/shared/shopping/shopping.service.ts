@@ -15,6 +15,11 @@ export class ShoppingService {
     return this.http.get('http://127.0.0.1:8000/api/shopping_lists/');
   }
 
+  // get ShoppingList
+  getShoppingList(id: number): Observable<any> {
+    return this.http.get('http://127.0.0.1:8000/api/shopping_lists/' + id);
+  }
+
   // store ShoppingList
   storeShoppingList(shoppingList: ShoppingList): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/shopping_lists/', shoppingList);
