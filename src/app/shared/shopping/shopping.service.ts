@@ -24,4 +24,9 @@ export class ShoppingService {
   storeShoppingList(shoppingList: ShoppingList): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/shopping_lists/', shoppingList);
   }
+
+  //update ShoppingList
+  updateShoppingList(id: number, shoppingList: ShoppingList): Observable<any>  {
+    return this.http.put('http://127.0.0.1:8000/api/shopping_lists/' + id, shoppingList);
+  }
 }

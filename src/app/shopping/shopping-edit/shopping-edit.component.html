@@ -1,1 +1,46 @@
-<p>shopping-edit works!</p>
+<div class="manage-page">
+    <div class="text-left">
+        <h2 class="text-success mb-5">買い物リスト管理</h2>
+    </div>
+    <div class="table-category-masters mb-5">
+        <div class="d-flex justify-content-between mb-4">
+            <h4>買い物リスト編集</h4>
+        </div>
+        <form [formGroup]="shoppingListForm" (ngSubmit)="onSubmit()">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row"><label for="">タイトル</label></th>
+                        <td><input type="text" class="form-control" formControlName="title" *ngIf="shoppingList" [(ngModel)]="shoppingList.title"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">登録日</th>
+                        <td>{{ shoppingList?.created_at }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">更新日</th>
+                        <td>{{ shoppingList?.updated_at }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">食材管理への登録</th>
+                        <td>
+                            <select *ngIf="shoppingList" name="" id="" class="form-select" formControlName="status" [(ngModel)]="shoppingList.status">
+                                <option *ngFor="let status of status_lists" value="{{ status.status }}">{{ status.status_label }}</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-block text-center">
+                <input type="submit" class="btn btn-success" value="更新">
+            </div>
+        </form>
+        
+        <!-- <div class="d-block text-center">
+            {{-- 買い物リスト削除フォーム --}}
+            {!! Form::model($shopping_list, ['route' => ['shopping_lists.destroy', $shopping_list->id], 'method' => 'delete']) !!}
+                {!! Form::submit('削除', ['class' => 'btn btn-danger mt-3']) !!}
+            {!! Form::close() !!}
+        </div> -->
+    </div>
+</div>
