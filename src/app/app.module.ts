@@ -26,6 +26,9 @@ import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.co
 import { ShoppingDetailComponent } from './shopping/shopping-detail/shopping-detail.component';
 import { ShoppingCreateComponent } from './shopping/shopping-create/shopping-create.component';
 import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.component';
+import { ShoppingItemListComponent } from './shopping/shopping-detail/shopping-item-list/shopping-item-list.component';
+import { ShoppingItemEditComponent } from './shopping/shopping-detail/shopping-item-edit/shopping-item-edit.component';
+import { ShoppingItemCreateComponent } from './shopping/shopping-detail/shopping-item-create/shopping-item-create.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.co
     ShoppingListComponent,
     ShoppingDetailComponent,
     ShoppingCreateComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    ShoppingItemListComponent,
+    ShoppingItemEditComponent,
+    ShoppingItemCreateComponent
   ],
   imports: [
     BrowserModule,
