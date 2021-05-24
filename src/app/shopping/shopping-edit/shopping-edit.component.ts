@@ -47,7 +47,7 @@ export class ShoppingEditComponent implements OnInit {
   getShoppingList(): void {
     this.shoppingService.getShoppingList(this.id).subscribe(
       result => {
-        this.shoppingList = result;
+        this.shoppingList = result.shopping_list;
       },
       error => {
         console.log(error.error);

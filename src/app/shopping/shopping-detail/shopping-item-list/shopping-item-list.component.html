@@ -1,1 +1,31 @@
-<p>shopping-item-list works!</p>
+
+<div class="table-category-masters mb-5">
+    <table class="table table-hover table-responsive-md">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">食材名</th>
+                <th scope="col">数量</th>
+                <th scope="col">単位</th>
+                <th scope="col">ステータス</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shoppingItem of shoppingItems">
+                <td>{{ shoppingItem.food_master_name }}</td>
+                <td>{{ shoppingItem.quantity }}</td>
+                <td>{{ shoppingItem.unit }}</td>
+                <td>{{ shoppingItem.status_label }}</td>
+                <td class="text-right"><a href="#" class="btn btn-secondary">編集</a></td>
+                <td class="text-right">
+                    <button class="btn btn-danger">削除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- {!! Form::model($shopping_list_items, ['route' => 'shopping_lists.batch_register']) !!}
+            {!! Form::hidden('shopping_list_id', $shopping_list->id, ['class' => 'form-control']) !!}
+            {!! Form::submit('食材管理に一括登録', ['class' => 'btn btn-success d-block m-auto']) !!}
+    {!! Form::close() !!} -->
+</div>

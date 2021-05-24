@@ -28,69 +28,9 @@
             </tbody>
         </table>
     </div>
-    
-    <!-- {!! Form::model($shopping_list_item, ['route' => 'shopping_list_items.store']) !!}
     <div class="d-flex justify-content-between mb-4">
         <h4>買い物リストアイテム一覧</h4>
     </div>
-    <table class="table">
-        <tbody>
-            <tr>
-                <th scope="row">{!! Form::label('category_master_id', 'カテゴリー名') !!}</th>
-                <td>{!! Form::select('category_master_id', $category_array, null, ['placeholder' => '選択してください', 'class' => 'form-control select-category']) !!}</td>
-                <td class="text-right">{!! Form::submit('追加', ['class' => 'btn btn-success btn block']) !!}</td>
-            </tr>
-            <tr>
-                <th scope="row">{!! Form::label('food_master_id', '食材名') !!}</th>
-                <td>{!! Form::select('food_master_id', [], null, ['placeholder' => '選択してください', 'class' => 'form-control select-food']) !!}</td>
-            </tr>
-            <tr>
-                <th scope="row">{!! Form::label('quantity', '数量') !!}</th>
-                <td>{!! Form::number('quantity', null, ['class' => 'form-control']) !!}</td>
-            </tr>
-            <tr>
-                <th scope="row">{!! Form::label('unit', '単位') !!}</th>
-                <td>{!! Form::text('unit', null, ['class' => 'form-control']) !!}</td>
-            </tr>
-        </tbody>
-    </table>
-    {!! Form::hidden('shopping_list_id', $shopping_list->id) !!}
-    {!! Form::close() !!}
-    <div class="table-category-masters mb-5">
-        @if (count($shopping_list_items) > 0)
-        <table class="table table-hover table-responsive-md">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">食材名</th>
-                    <th scope="col">数量</th>
-                    <th scope="col">単位</th>
-                    <th scope="col">ステータス</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($shopping_list_items as $shopping_list_item)
-                <tr>
-                    <td>{{ $shopping_list_item->food_master_name }}</td>
-                    <td>{{ $shopping_list_item->quantity }}</td>
-                    <td>{{ $shopping_list_item->unit }}</td>
-                    <td>{{ $shopping_list_item->status_label }}</td>
-                    <td class="text-right">{!! link_to_route('shopping_list_items.edit', '編集', ['shopping_list_item' => $shopping_list_item->id], ['class' => 'btn btn-secondary']) !!}</td>
-                    <td class="text-right">
-                        {!! Form::model($shopping_list_item, ['route' => ['shopping_list_items.destroy', $shopping_list_item->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        {{-- 一括登録フォーム --}}
-        {!! Form::model($shopping_list_items, ['route' => 'shopping_lists.batch_register']) !!}
-                {!! Form::hidden('shopping_list_id', $shopping_list->id, ['class' => 'form-control']) !!}
-                {!! Form::submit('食材管理に一括登録', ['class' => 'btn btn-success d-block m-auto']) !!}
-        {!! Form::close() !!}
-        @endif
-    </div> -->
+    <app-shopping-item-create></app-shopping-item-create>
+    <app-shopping-item-list></app-shopping-item-list>
 </div>

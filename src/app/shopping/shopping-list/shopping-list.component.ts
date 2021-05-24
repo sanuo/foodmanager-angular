@@ -16,7 +16,7 @@ export class ShoppingListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // 登録済みの食材管理データを取得
+    // 登録済みの買い物リストを取得
     this.shoppingService.getShoppingLists().subscribe((data:any) => {
       this.shoppingLists = data;
     })
