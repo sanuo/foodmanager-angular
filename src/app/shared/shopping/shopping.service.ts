@@ -50,4 +50,9 @@ export class ShoppingService {
   updateShoppingItem(id: number, shoppingItem: ShoppingItem): Observable<any>  {
     return this.http.put('http://127.0.0.1:8000/api/shopping_list_items/' + id, shoppingItem);
   }
+
+  //delete ShoppingItem
+  deleteShoppingItem(id: number): Observable<any>  {
+    return this.http.delete('http://127.0.0.1:8000/api/shopping_list_items/' + id);
+  }
 }

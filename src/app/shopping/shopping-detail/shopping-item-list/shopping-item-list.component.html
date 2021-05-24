@@ -19,7 +19,7 @@
                 <td>{{ shoppingItem.status_label }}</td>
                 <td class="text-right"><a href="#" routerLink="/shopping/item/{{ shoppingItem.id }}/edit" class="btn btn-secondary">編集</a></td>
                 <td class="text-right">
-                    <button class="btn btn-danger">削除</button>
+                    <button class="btn btn-danger" (click)="deleteShoppingItem(shoppingItem)">削除</button>
                 </td>
             </tr>
         </tbody>
