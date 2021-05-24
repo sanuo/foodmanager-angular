@@ -29,8 +29,8 @@ export class ShoppingItemListComponent implements OnInit {
   getShoppingItems(): void {
     this.shoppingService.getShoppingList(this.id).subscribe(
       result => {
-        // console.dir(result.shopping_items);
         this.shoppingItems = result.shopping_items;
+        // console.log(this.shoppingItems);
       },
       error => {
         console.log(error.error);
