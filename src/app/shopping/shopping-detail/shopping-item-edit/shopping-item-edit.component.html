@@ -37,7 +37,7 @@
                             <th scope="row">ステータス</th>
                             <td>
                                 <select *ngIf="shoppingItem" name="" id="" class="form-select" formControlName="status" [(ngModel)]="shoppingItem.status">
-                                    <option *ngFor="let status of status_lists" value="{{ status.status }}">{{ status.status_label }}</option>
+                                    <option *ngFor="let status of status_lists" [ngValue]="status.status">{{ status.status_label }}</option>
                                 </select>
                             </td>
                         </tr>
