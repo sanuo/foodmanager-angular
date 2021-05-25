@@ -23,8 +23,13 @@
                     </tr>
                     <tr>
                         <th scope="row">食材管理への登録</th>
+                        <!-- <td>
+                            <select *ngIf="shoppingList" name="status" id="" class="form-select" formControlName="status" [(ngModel)]="shoppingList.status">
+                                <option *ngFor="let status of status_lists" [ngValue]="status.status">{{ status.status_label }}</option>
+                            </select>
+                        </td> -->
                         <td>
-                            <select *ngIf="shoppingList" name="" id="status" class="form-select" formControlName="status" [(ngModel)]="shoppingList.status">
+                            <select *ngIf="shoppingList" id="" class="form-select" formControlName="status">
                                 <option *ngFor="let status of status_lists" [ngValue]="status.status">{{ status.status_label }}</option>
                             </select>
                         </td>

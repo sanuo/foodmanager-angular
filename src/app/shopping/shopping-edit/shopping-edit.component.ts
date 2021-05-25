@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShoppingList } from 'src/app/model/shopping-list.model';
 import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
@@ -59,6 +59,7 @@ export class ShoppingEditComponent implements OnInit {
     this.shoppingService.getShoppingList(this.id).subscribe(
       result => {
         this.shoppingList = result.shopping_list;
+        this.shoppingListForm.setValue({ status: this.shoppingList.status , title: null});
       },
       error => {
         console.log(error.error);
