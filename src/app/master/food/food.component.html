@@ -31,15 +31,15 @@
                 <th scope="col">カテゴリー名</th>
                 <th scope="col">食材名</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let food of foods">
                 <td>{{ food.category_master_name }}</td>
                 <td>{{ food.name }}</td>
-                <td class="text-right">
-                    <a href="#" routerLink="/masters/food/{{ food.id }}" class="btn btn-secondary">編集</a>
-                </td>
+                <td class="text-right"><a href="#" routerLink="/masters/food/{{ food.id }}" class="btn btn-secondary">編集</a></td>
+                <td class="text-right"><button class="btn btn-danger" (click)="deleteFood(food)">削除</button></td>
             </tr>
         </tbody>
     </table>

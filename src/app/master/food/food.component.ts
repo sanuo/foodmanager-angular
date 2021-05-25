@@ -59,5 +59,17 @@ export class FoodComponent implements OnInit {
       this.categories = data;
       // console.dir(data);
     })
+    // 登録済みのフードマスター取得
+    this.masterService.getFoods().subscribe((data:any) => {
+      // console.dir(data);
+      this.foods = data;
+    })
+  }
+
+  deleteFood(food: Food):void {
+    if (confirm('本当に削除しますか？削除したデータは復旧できません。')) {
+      this.foods = this.foods.filter(item => item !== food);
+      this.masterService.deleteFood(food.id).subscribe();
+    }
   }
 }

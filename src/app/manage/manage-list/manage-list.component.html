@@ -15,6 +15,7 @@
                     <th scope="col">単位</th>
                     <th scope="col">消費期限</th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,9 +24,8 @@
                     <td>{{ foodManage.quantity }}</td>
                     <td>{{ foodManage.unit }}</td>
                     <td>{{ foodManage.expiration_date }}</td>
-                    <td class="text-right">
-                        <a href="#" routerLink="{{ foodManage.id }}" class="btn btn-secondary">詳細</a>
-                    </td>
+                    <td class="text-right"><a href="#" routerLink="{{ foodManage.id }}" class="btn btn-secondary">詳細</a></td>
+                    <td class="text-right"><button class="btn btn-danger" (click)="deleteFoodManage(foodManage)">削除</button></td>
                 </tr>
             </tbody>
         </table>

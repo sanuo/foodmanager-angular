@@ -22,4 +22,8 @@ export class ManageListComponent implements OnInit {
     })
   }
 
+  deleteFoodManage(foodManage: FoodManage):void {
+    this.foodManages = this.foodManages.filter(item => item !== foodManage);
+    this.foodManageService.deleteFoodManage(foodManage.id).subscribe();
+  }
 }

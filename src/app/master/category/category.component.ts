@@ -48,4 +48,13 @@ export class CategoryComponent implements OnInit {
   changeFlag() {
     this.changeEvent.emit();
   }
+
+  deleteCategory(category: Category):void {
+    if (confirm('本当に削除しますか？削除したデータは復旧できません。')) {
+      this.categories = this.categories.filter(item => item !== category);
+      this.masterService.deleteCategory(category.id).subscribe();
+      this.changeEvent.emit();
+    }
+  }
+
 }

@@ -20,12 +20,14 @@
             <tr>
                 <th scope="col">カテゴリー名</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let category of categories">
                 <td>{{ category.name }}</td>
                 <td class="text-right"><a href="#" routerLink="/masters/category/{{ category.id }}" class="btn btn-secondary">編集</a></td>
+                <td class="text-right"><button class="btn btn-danger" (click)="deleteCategory(category)">削除</button></td>
             </tr>
         </tbody>
     </table>

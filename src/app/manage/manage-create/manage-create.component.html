@@ -13,19 +13,38 @@
                         <tr>
                             <th scope="row"><label for="">カテゴリー名</label></th>
                             <td>
-                                <select name="" id="" class="form-select" (change)="setFoodMasters($event.target)" formControlName="category_master_id">
+                                <select name="" id="" class="form-select" (change)="setFoodMasters($event.target); getCategoryChange($event.target)" formControlName="category_master_id">
                                     <option value="" disabled>選択してください</option>
                                     <option *ngFor="let category of categories;" value="{{category.id}}">{{ category.name }}</option>
+                                    <option value="new">新しく作る</option>
                                 </select>
+                                <ng-container *ngIf="categoryNew">
+                                    <form [formGroup]="categoryForm" (ngSubmit)="newCategory()">
+                                        <div class="d-flex">
+                                            <input type="text" class="form-control" formControlName="name">
+                                            <input type="submit" class="btn btn-success btn block" value="追加">
+                                        </div>
+                                    </form>
+                                </ng-container>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="">食材名</label></th>
                             <td>
-                                <select name="" id="" class="form-select" formControlName="food_master_id">
+                                <select name="" id="" class="form-select" (change)="getFoodChange($event.target)" formControlName="food_master_id">
                                     <option value="" disabled>選択してください</option>
                                     <option *ngFor="let food of foods" [ngValue]="food.id">{{ food.name }}</option>
+                                    <option value="new" *ngIf="foodManageForm.value.category_master_id">新しく作る</option>
                                 </select>
+                                <ng-container *ngIf="foodNew">
+                                    <form [formGroup]="foodForm" (ngSubmit)="newFood()">
+                                        <div class="d-flex">
+                                            <input type="text" class="form-control" formControlName="name">
+                                            <input type="hidden" class="form-control" formControlName="category_master_id">
+                                            <input type="submit" class="btn btn-success btn block" value="追加">
+                                        </div>
+                                    </form>
+                                </ng-container>
                             </td>
                         </tr>
                         <tr>

@@ -16,6 +16,12 @@ export class ManageCreateComponent implements OnInit {
 
   foodManage: FoodManage;
   foodManageForm: FormGroup;
+  categoryForm: FormGroup;
+  foodForm: FormGroup;
+
+  categoryNew: boolean = false;
+  foodNew: boolean = false;
+
 
   categories: Category[];
   foods: Food[];
@@ -33,6 +39,13 @@ export class ManageCreateComponent implements OnInit {
       unit: [''],
       expiration_date: [''],
     })
+    this.categoryForm = this.fb.group({
+      name: [''],
+    });
+    this.foodForm = this.fb.group({
+      name: [''],
+      category_master_id: ['']
+    });
   }
 
   ngOnInit(): void {
@@ -77,5 +90,69 @@ export class ManageCreateComponent implements OnInit {
         }
       );
     }
+  }
+
+  getCategoryChange(value?: any) {
+    if (value.value == 'new') {
+      this.categoryNew = true;
+    } else {
+      this.categoryNew = false;
+    }
+  }
+
+  getFoodChange(value?: any) {
+    if (value.value == 'new') {
+      this.foodNew = true;
+    } else {
+      this.foodNew = false;
+    }
+  }
+
+  newCategory() {
+    this.masterService.storeCategory(this.categoryForm.value).subscribe(
+      result => {
+        this.getCategories();
+        this.categoryNew = false;
+        this.foodManageForm.setValue({
+          category_master_id: result.id,
+          food_master_id: null,
+          quantity: null,
+          unit: null,
+          expiration_date: null,
+        });
+      },
+      error => {
+        console.log(error.error);
+      },
+      () => {
+        // this.router.navigate(['/shopping']);
+      }
+    )
+  }
+
+  newFood() {
+    this.foodForm.setValue({
+      category_master_id: this.foodManageForm.value.category_master_id,
+      name: this.foodForm.value.name
+    });
+    this.masterService.storeFood(this.foodForm.value).subscribe(
+      result => {
+        this.foods.push(result);
+        this.foodNew = false;
+        this.foodManageForm.setValue({
+          category_master_id: result.category_master_id,
+          food_master_id: result.id,
+          quantity: null,
+          unit: null,
+          expiration_date: null,
+        });
+      },
+      error => {
+        console.log(error.error);
+      },
+      () => {
+        // this.router.navigate(['/shopping']);
+      }
+    )
   }
 }
