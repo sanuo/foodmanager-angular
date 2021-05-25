@@ -7,6 +7,7 @@
                     <select name="" id="" class="form-select" (change)="setFoodMasters($event.target)" formControlName="category_master_id">
                         <option value="" disabled>選択してください</option>
                         <option *ngFor="let category of categories;" value="{{category.id}}">{{ category.name }}</option>
+                        <option value="">新しく作る</option>
                     </select>
                 </td>
                 <td class="text-right"><input type="submit" class="btn btn-success btn block" value="追加"></td>
@@ -17,6 +18,7 @@
                     <select name="" id="" class="form-select" formControlName="food_master_id">
                         <option value="" disabled>選択してください</option>
                         <option *ngFor="let food of foods" [ngValue]="food.id">{{ food.name }}</option>
+                        <option value="">新しく作る</option>
                     </select>
                 </td>
             </tr>

@@ -11,7 +11,7 @@
                 <tbody>
                     <tr>
                         <th scope="row"><label for="">タイトル</label></th>
-                        <td><input type="text" class="form-control" formControlName="title" *ngIf="shoppingList" [(ngModel)]="shoppingList.title"></td>
+                        <td><input type="text" class="form-control" formControlName="title" *ngIf="shoppingList"></td>
                     </tr>
                     <tr>
                         <th scope="row">登録日</th>
@@ -28,9 +28,15 @@
                                 <option *ngFor="let status of status_lists" [ngValue]="status.status">{{ status.status_label }}</option>
                             </select>
                         </td> -->
-                        <td>
+                        <!-- <td>
                             <select *ngIf="shoppingList" id="" class="form-select" formControlName="status">
                                 <option *ngFor="let status of status_lists" [ngValue]="status.status">{{ status.status_label }}</option>
+                            </select>
+                        </td> -->
+                        <td>
+                            <select *ngIf="shoppingList" id="" class="form-select" formControlName="status">
+                                <option value="0">未登録</option>
+                                <option value="1">登録済</option>
                             </select>
                         </td>
                     </tr>
