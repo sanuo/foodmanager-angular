@@ -42,6 +42,17 @@ export class ShoppingEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.getShoppingList();
+
+    this.status_lists = [
+      {
+        status: 0,
+        status_label: '未登録'
+      },
+      {
+        status: 1,
+        status_label: '登録済'
+      }
+    ];
   }
 
   getShoppingList(): void {
