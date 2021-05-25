@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: "游ゴシック", "Yu Gothic" !important;
+    header {
+        nav {
+            &.navbar {
+                display: block;
+                width: 100%;
+                button {
+                    &.navbar-toggler {
+                        margin-right: 0 !important;
+                    }
+                }
+            }
+        }
+    }
     .top-page {
         .firstview {
             background-image: url('assets/img/firstview_bg.jpg');

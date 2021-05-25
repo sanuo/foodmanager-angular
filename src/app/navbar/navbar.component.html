@@ -1,9 +1,6 @@
 <header class="mb-5">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
-        <!-- トップページへのリンク -->
-        <a class="navbar-brand" href="#" routerLink="/">FoodManager</a>
 
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
+        <!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -25,15 +22,46 @@
                         <a href="#" class="nav-link text-white" (click)="signOut()">ログアウト</a>
                     </li>
 
-                    <!-- ログインページへのリンク -->
                     <li class="nav-item" *ngIf="!isSignedIn">
                         <a href="#" routerLink="/login" class="nav-link text-white">ログイン</a>
                     </li>
-                    <!-- 新規登録ページへのリンク -->
                     <li class="nav-item" *ngIf="!isSignedIn">
                         <a href="#" routerLink="/signup" class="nav-link text-white">新規登録</a>
                     </li>
             </ul>
-        </div>
-    </nav>
+        </div> -->
+        <nav class="navbar navbar-dark bg-success">
+            <div class="d-flex justify-content-between">
+                <!-- トップページへのリンク -->
+                <a class="navbar-brand" href="#" routerLink="/">FoodManager</a>
+                <div>
+                    <button class="navbar-toggler d-block m-auto mr-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse" id="navbarToggleExternalContent">
+                        <ul class="navbar-nav text-right">
+                            <li class="nav-item" *ngIf="isSignedIn">
+                                <a href="#" routerLink="/manage" class="nav-link text-white">食材管理</a>
+                            </li>
+                            <li class="nav-item" *ngIf="isSignedIn">
+                                <a href="#" routerLink="/shopping" class="nav-link text-white">買い物リスト</a>
+                            </li>
+                            <li class="nav-item" *ngIf="isSignedIn">
+                                <a href="#" routerLink="/masters" class="nav-link text-white">マスター管理</a>
+                            </li>
+                            <li class="nav-item" *ngIf="isSignedIn">
+                                <a href="#" class="nav-link text-white" (click)="signOut()">ログアウト</a>
+                            </li>
+        
+                            <li class="nav-item" *ngIf="!isSignedIn">
+                                <a href="#" routerLink="/login" class="nav-link text-white">ログイン</a>
+                            </li>
+                            <li class="nav-item" *ngIf="!isSignedIn">
+                                <a href="#" routerLink="/signup" class="nav-link text-white">新規登録</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
 </header>
