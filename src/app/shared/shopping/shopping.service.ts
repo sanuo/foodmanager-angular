@@ -14,7 +14,7 @@ export class ShoppingService {
 
   // get ShoppingLists
   getShoppingLists(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/shopping_lists/');
+    return this.http.get(environment.apiUrl + '/shopping_lists');
   }
 
   // get ShoppingList
@@ -24,7 +24,7 @@ export class ShoppingService {
 
   // store ShoppingList
   storeShoppingList(shoppingList: ShoppingList): Observable<any> {
-    return this.http.post(environment.apiUrl + '/shopping_lists/', shoppingList);
+    return this.http.post(environment.apiUrl + '/shopping_lists', shoppingList);
   }
 
   //update ShoppingList
@@ -44,7 +44,7 @@ export class ShoppingService {
 
   // store ShoppingItem
   storeShoppingItem(shoppingItem: ShoppingItem): Observable<any> {
-    return this.http.post(environment.apiUrl + '/shopping_list_items/', shoppingItem);
+    return this.http.post(environment.apiUrl + '/shopping_list_items', shoppingItem);
   }
 
   //update ShoppingItem
@@ -59,6 +59,6 @@ export class ShoppingService {
 
   //delete ShoppingItem
   batchRegister(shoppingList: ShoppingList): Observable<any>  {
-    return this.http.post(environment.apiUrl + '/shopping_lists/batch_register/', shoppingList);
+    return this.http.post(environment.apiUrl + '/shopping_lists/batch_register', shoppingList);
   }
 }

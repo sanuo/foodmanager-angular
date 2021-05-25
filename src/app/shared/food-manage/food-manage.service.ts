@@ -13,7 +13,7 @@ export class FoodManageService {
 
   // get FoodManages
   getFoodManages(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/food_manages/');
+    return this.http.get(environment.apiUrl + '/food_manages');
   }
 
   // get FoodManage
@@ -23,7 +23,7 @@ export class FoodManageService {
 
   // store FoodManage
   storeFoodManage(foodManage: FoodManage): Observable<any> {
-    return this.http.post(environment.apiUrl + '/food_manages/', foodManage);
+    return this.http.post(environment.apiUrl + '/food_manages', foodManage);
   }
 
   //update FoodManage
