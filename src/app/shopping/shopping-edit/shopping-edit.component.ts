@@ -59,7 +59,7 @@ export class ShoppingEditComponent implements OnInit {
     this.shoppingService.getShoppingList(this.id).subscribe(
       result => {
         this.shoppingList = result.shopping_list;
-        this.shoppingListForm.setValue({ status: this.shoppingList.status , title: null});
+        this.shoppingListForm.setValue({ status: this.shoppingList.status , title: this.shoppingList.title});
       },
       error => {
         console.log(error.error);
