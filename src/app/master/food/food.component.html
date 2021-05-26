@@ -11,7 +11,8 @@
                         <th scope="row"><label for="">カテゴリー名</label></th>
                         <td>
                             <select *ngIf="categories" name="category_master_id" id="" class="form-select" formControlName="category_master_id">
-                                <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
+                                <option value="" disabled>選択してください</option>
+                                <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
                             </select>
                         </td>
                         <td class="text-right"><input type="submit" class="btn btn-success" value="追加"></td>

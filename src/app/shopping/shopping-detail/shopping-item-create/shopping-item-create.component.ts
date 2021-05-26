@@ -61,6 +61,13 @@ export class ShoppingItemCreateComponent implements OnInit {
       result => {
         // console.log(result)
         this.changeFlag();
+        this.shoppingItemForm.reset({
+          shopping_list_id: this.id,
+          category_master_id: result.category_master_id,
+          food_master_id: result.id,
+          quantity: null,
+          unit: null,
+        });
       },
       error => {
         console.log(error.error);

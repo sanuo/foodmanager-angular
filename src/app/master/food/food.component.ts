@@ -42,8 +42,13 @@ export class FoodComponent implements OnInit {
   }
 
   onSubmit() {
+    // console.log(this.foodForm.value)
     this.masterService.storeFood(this.foodForm.value).subscribe(
       result => {
+        this.foodForm.reset({
+          category_master_id: result.category_master_id,
+          name: null
+        });
         this.foods.push(result);
       },
       error => {

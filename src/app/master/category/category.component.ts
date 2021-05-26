@@ -34,7 +34,8 @@ export class CategoryComponent implements OnInit {
   onSubmit() {
     this.masterService.storeCategory(this.categoryForm.value).subscribe(
       result => {
-        // console.log(result)
+        // console.log(result);
+        this.categoryForm.reset();
         this.categories.push(result);
         this.changeFlag();
       },
