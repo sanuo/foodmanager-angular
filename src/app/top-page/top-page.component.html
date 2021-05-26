@@ -24,7 +24,7 @@
     <!-- ログイン時 -->
     <div *ngIf="isSignedIn">
         <div class="center">
-            <div class="text-center">
+            <div class="text-center" *ngIf="UserProfile">
                 <p>{{ UserProfile?.name }}さん、こんにちは。</p>
                 <p>食材の管理ってめんどくさいですよね。</p>
             </div>

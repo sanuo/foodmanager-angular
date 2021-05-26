@@ -31,6 +31,8 @@ import { ShoppingItemEditComponent } from './shopping/shopping-detail/shopping-i
 import { ShoppingItemCreateComponent } from './shopping/shopping-detail/shopping-item-create/shopping-item-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 
 @NgModule({
@@ -66,7 +68,9 @@ import { MatSliderModule } from '@angular/material/slider';
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatProgressSpinnerModule,
+    FontAwesomeModule
   ],
   providers: [
     {
