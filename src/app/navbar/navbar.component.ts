@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthStateService } from '../shared/auth-state.service';
 import { TokenService } from '../shared/token.service';
-import { faUtensils, faShoppingBasket, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faShoppingBasket, faCogs, faCarrot, faSignOutAlt, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +14,10 @@ export class NavbarComponent implements OnInit {
   faUtensils = faUtensils;
   faShoppingBasket = faShoppingBasket;
   faCogs = faCogs;
-
+  faCarrot = faCarrot;
+  faSignOutAlt = faSignOutAlt;
+  faSignInAlt = faSignInAlt;
+  faUserPlus = faUserPlus;
 
 
   isSignedIn: boolean;
