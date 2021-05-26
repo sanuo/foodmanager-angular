@@ -29,6 +29,9 @@ import { ShoppingEditComponent } from './shopping/shopping-edit/shopping-edit.co
 import { ShoppingItemListComponent } from './shopping/shopping-detail/shopping-item-list/shopping-item-list.component';
 import { ShoppingItemEditComponent } from './shopping/shopping-detail/shopping-item-edit/shopping-item-edit.component';
 import { ShoppingItemCreateComponent } from './shopping/shopping-detail/shopping-item-create/shopping-item-create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +64,9 @@ import { ShoppingItemCreateComponent } from './shopping/shopping-detail/shopping
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [
     {

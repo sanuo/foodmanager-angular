@@ -47,9 +47,24 @@
                                 </ng-container>
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <th scope="row"><label for="">数量</label></th>
                             <td><input type="number" class="form-control" formControlName="quantity"></td>
+                        </tr> -->
+                        <tr>
+                            <th scope="row"><label for="">数量</label></th>
+                            <td class="d-flex">
+                                <mat-slider
+                                thumbLabel
+                                [displayWith]="formatLabel"
+                                tickInterval="auto"
+                                [(ngModel)]="value"
+                                step="1"
+                                min="0"
+                                max="100"
+                                aria-label="units" class="d-block" formControlName="quantity" style="width: 100%;"></mat-slider>
+                                <label class="example-value-label">{{value}}</label>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row"><label for="">単位</label></th>

@@ -30,5 +30,4 @@ export class TopPageComponent implements OnInit {
       })
     }
   }
-
 }

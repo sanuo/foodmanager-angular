@@ -25,7 +25,8 @@ export class ManageCreateComponent implements OnInit {
 
   categories: Category[];
   foods: Food[];
-
+  
+  value;
   constructor(
     public fb: FormBuilder,
     private masterService: MasterService,
@@ -154,5 +155,9 @@ export class ManageCreateComponent implements OnInit {
         // this.router.navigate(['/shopping']);
       }
     )
+  }
+
+  formatLabel(value: number) {
+    return value;
   }
 }
