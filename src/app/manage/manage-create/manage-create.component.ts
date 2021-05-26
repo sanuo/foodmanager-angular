@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
 import { FoodManage } from 'src/app/model/food-manage.model';
@@ -34,9 +34,9 @@ export class ManageCreateComponent implements OnInit {
     private router: Router,
   ) {
     this.foodManageForm = this.fb.group({
-      category_master_id: [''],
-      food_master_id: [''],
-      quantity: [''],
+      category_master_id: ['', [Validators.required]],
+      food_master_id: ['', [Validators.required]],
+      quantity: ['', [Validators.required]],
       unit: [''],
       expiration_date: [''],
     })

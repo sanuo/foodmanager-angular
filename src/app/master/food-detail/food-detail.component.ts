@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
 import { Food } from 'src/app/model/food.model';
@@ -26,8 +26,8 @@ export class FoodDetailComponent implements OnInit {
     public fb: FormBuilder,
   ) {
     this.foodForm = this.fb.group({
-      name: [''],
-      category_master_id: ['']
+      name: ['', [Validators.required]],
+      category_master_id: ['', [Validators.required]]
     })
   }
 

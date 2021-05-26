@@ -11,7 +11,7 @@
                 <table class="table">
                     <tbody>
                         <tr>
-                            <th scope="row"><label for="">カテゴリー名</label></th>
+                            <th scope="row"><label class="required">カテゴリー名</label></th>
                             <td>
                                 <select *ngIf="foodManage" name="category_master_id" id="" class="form-select" formControlName="category_master_id" [(ngModel)]="foodManage.category_master_id" (change)="setFoodMasters($event.target)">
                                     <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
@@ -19,7 +19,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="">食材名</label></th>
+                            <th scope="row"><label class="required">食材名</label></th>
                             <td>
                                 <select *ngIf="foodManage" name="food_master_id" id="" class="form-select" formControlName="food_master_id" [(ngModel)]="foodManage.food_master_id">
                                     <option *ngFor="let food of foods" [ngValue]="food.id">{{ food.name }}</option>
@@ -27,7 +27,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="">数量</label></th>
+                            <th scope="row"><label class="required">数量</label></th>
                             <td><input type="number" class="form-control" formControlName="quantity" *ngIf="foodManage" [(ngModel)]="foodManage.quantity"></td>
                         </tr>
                         <tr>

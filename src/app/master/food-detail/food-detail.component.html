@@ -8,7 +8,7 @@
                 <table class="table">
                     <tbody>
                         <tr>
-                            <th scope="row">カテゴリーID</th>
+                            <th scope="row"><label class="required">カテゴリーID</label></th>
                             <td>
                                 <select *ngIf="food" name="category_master_id" id="" class="form-select" formControlName="category_master_id" [(ngModel)]="food.category_master_id">
                                     <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
@@ -20,7 +20,7 @@
                             <td>{{ food?.id }}</td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="">食材名</label></th>
+                            <th scope="row"><label class="required">食材名</label></th>
                             <td><input type="text" class="form-control" *ngIf="food" [(ngModel)]="food.name" formControlName="name"></td>
                         </tr>
                         <tr>

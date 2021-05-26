@@ -3,13 +3,13 @@
         <h4>カテゴリーマスター</h4>
     </div>
     <div>
-        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" #formCheck="ngForm">
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row"><label for="name">カテゴリ名</label></th>
-                        <td><input type="text" name="name" id="" class="form-control" formControlName="name"></td>
-                        <td class="text-right"><input type="submit" class="btn btn-success" value="追加"></td>
+                        <th scope="row"><label for="name" class="required">カテゴリ名</label></th>
+                        <td><input type="text" name="name" id="" class="form-control" formControlName="name" required></td>
+                        <td class="text-right"><input type="submit" class="btn btn-success" value="追加" [disabled]="!formCheck.valid"></td>
                     </tr>
                 </tbody>
             </table>

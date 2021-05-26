@@ -4,21 +4,21 @@
     </div>
     
     <div>
-        <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="foodForm" (ngSubmit)="onSubmit()" #formCheck="ngForm">
             <table class="table">
                 <tbody>
                     <tr>
-                        <th scope="row"><label for="">カテゴリー名</label></th>
+                        <th scope="row"><label class="required">カテゴリー名</label></th>
                         <td>
                             <select *ngIf="categories" name="category_master_id" id="" class="form-select" formControlName="category_master_id">
                                 <option value="" disabled>選択してください</option>
                                 <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
                             </select>
                         </td>
-                        <td class="text-right"><input type="submit" class="btn btn-success" value="追加"></td>
+                        <td class="text-right"><input type="submit" class="btn btn-success" value="追加" [disabled]="!formCheck.valid"></td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="">食材名</label></th>
+                        <th scope="row"><label class="required">食材名</label></th>
                         <td><input type="text" class="form-control" formControlName="name"></td>
                     </tr>
                 </tbody>

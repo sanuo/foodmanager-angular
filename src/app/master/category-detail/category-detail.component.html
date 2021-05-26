@@ -15,8 +15,8 @@
                             <td>{{ category?.id }}</td>
                         </tr>
                         <tr>
-                            <th scope="row"><label for="name">カテゴリー名</label></th>
-                            <td><input type="text" name="name" class="form-control" *ngIf="category" [(ngModel)]="category.name" formControlName="name"></td>
+                            <th scope="row"><label for="name" class="required">カテゴリー名</label></th>
+                            <td><input type="text" name="name" class="form-control" *ngIf="category" [(ngModel)]="category.name" formControlName="name" required></td>
                         </tr>
                         <tr>
                             <th scope="row">登録日</th>

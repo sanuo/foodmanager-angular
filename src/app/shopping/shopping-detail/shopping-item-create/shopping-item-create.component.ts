@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/model/category.model';
 import { Food } from 'src/app/model/food.model';
@@ -36,11 +36,11 @@ export class ShoppingItemCreateComponent implements OnInit {
   ) {
     this.shoppingItemForm = this.fb.group({
       shopping_list_id: [this.id],
-      category_master_id: [''],
-      food_master_id: [''],
-      quantity: [''],
+      category_master_id: ['', [Validators.required]],
+      food_master_id: ['', [Validators.required]],
+      quantity: ['', [Validators.required]],
       unit: [''],
-      status: ['']
+      status: ['',]
     });
     this.categoryForm = this.fb.group({
       name: [''],

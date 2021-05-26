@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/app/model/category.model';
 import { MasterService } from 'src/app/shared/master/master.service';
 
@@ -21,7 +21,7 @@ export class CategoryComponent implements OnInit {
     public fb: FormBuilder,
   ) {
     this.categoryForm = this.fb.group({
-      name: [''],
+      name: ['', [Validators.required]],
     })
   }
 

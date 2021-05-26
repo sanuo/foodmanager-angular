@@ -7,17 +7,17 @@
             <h4>買い物リスト登録</h4>
         </div>
         <div>
-            <form [formGroup]="shoppingListForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="shoppingListForm" (ngSubmit)="onSubmit()" #formCheck="ngForm">
                 <table class="table">
                     <tbody>
                         <tr>
-                            <th scope="row"><label for="">タイトル</label></th>
+                            <th scope="row"><label class="required">タイトル</label></th>
                             <td><input type="text" class="form-control" formControlName="title"></td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="d-block text-center">
-                    <input type="submit" value="登録" class="btn btn-success">
+                    <input type="submit" value="登録" class="btn btn-success" [disabled]="!formCheck.valid">
                 </div>
             </form>
         </div>
