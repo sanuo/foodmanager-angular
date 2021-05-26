@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { FoodManage } from 'src/app/model/food-manage.model';
 import { FoodManageService } from 'src/app/shared/food-manage/food-manage.service';
 
@@ -9,6 +10,8 @@ import { FoodManageService } from 'src/app/shared/food-manage/food-manage.servic
   styleUrls: ['./manage-detail.component.scss']
 })
 export class ManageDetailComponent implements OnInit {
+  // fontawsome
+  faUtensils = faUtensils;
 
   foodManage: FoodManage;
 

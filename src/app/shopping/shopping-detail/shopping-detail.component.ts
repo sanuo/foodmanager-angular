@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { ShoppingList } from 'src/app/model/shopping-list.model';
 import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
 
@@ -9,6 +10,8 @@ import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
   styleUrls: ['./shopping-detail.component.scss']
 })
 export class ShoppingDetailComponent implements OnInit {
+  // fontawsome
+  faShoppingBasket = faShoppingBasket;
 
   changeFlag = true;
 

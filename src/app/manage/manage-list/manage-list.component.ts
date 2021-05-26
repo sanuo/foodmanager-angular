@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodManage } from 'src/app/model/food-manage.model';
 import { FoodManageService } from 'src/app/shared/food-manage/food-manage.service';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-manage-list',
@@ -8,6 +9,8 @@ import { FoodManageService } from 'src/app/shared/food-manage/food-manage.servic
   styleUrls: ['./manage-list.component.scss']
 })
 export class ManageListComponent implements OnInit {
+  // fontawsome
+  faUtensils = faUtensils;
 
   foodManages: FoodManage[];
 

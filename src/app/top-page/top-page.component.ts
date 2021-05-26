@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user.model';
 import { AuthStateService } from '../shared/auth-state.service';
 import { AuthService } from '../shared/auth.service';
+import { faUtensils, faShoppingBasket, faCogs, faCarrot, faSignOutAlt, faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-top-page',
@@ -9,6 +10,12 @@ import { AuthService } from '../shared/auth.service';
   styleUrls: ['./top-page.component.scss']
 })
 export class TopPageComponent implements OnInit {
+  
+  // fontawsome
+  faCarrot = faCarrot;
+  faUtensils = faUtensils;
+  faShoppingBasket = faShoppingBasket;
+  faCogs = faCogs;
 
   isSignedIn: boolean;
   UserProfile: User;

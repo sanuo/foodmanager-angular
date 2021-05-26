@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { Category } from 'src/app/model/category.model';
 import { FoodManage } from 'src/app/model/food-manage.model';
 import { Food } from 'src/app/model/food.model';
@@ -13,6 +14,8 @@ import { MasterService } from 'src/app/shared/master/master.service';
   styleUrls: ['./manage-create.component.scss']
 })
 export class ManageCreateComponent implements OnInit {
+  // fontawsome
+  faUtensils = faUtensils;
 
   foodManage: FoodManage;
   foodManageForm: FormGroup;

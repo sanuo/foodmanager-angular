@@ -6,6 +6,7 @@ import { FoodManage } from 'src/app/model/food-manage.model';
 import { Food } from 'src/app/model/food.model';
 import { FoodManageService } from 'src/app/shared/food-manage/food-manage.service';
 import { MasterService } from 'src/app/shared/master/master.service';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-manage-edit',
@@ -13,6 +14,8 @@ import { MasterService } from 'src/app/shared/master/master.service';
   styleUrls: ['./manage-edit.component.scss']
 })
 export class ManageEditComponent implements OnInit {
+  // fontawsome
+  faUtensils = faUtensils;
 
   foodManage: FoodManage;
   

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { ShoppingService } from 'src/app/shared/shopping/shopping.service';
   styleUrls: ['./shopping-create.component.scss']
 })
 export class ShoppingCreateComponent implements OnInit {
+  // fontawsome
+  faShoppingBasket = faShoppingBasket;
 
   shoppingListForm: FormGroup;
 
