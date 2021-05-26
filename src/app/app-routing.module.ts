@@ -17,6 +17,9 @@ import { SignupComponent } from './signup/signup.component';
 import { TopPageComponent } from './top-page/top-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
+import { AuthGuard } from './guard/auth.guard';
+import { LoginGuard } from './guard/login.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -24,63 +27,78 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'profile',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'masters',
-    component: MasterComponent
+    component: MasterComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'masters/category/:id',
-    component: CategoryDetailComponent
+    component: CategoryDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'masters/food/:id',
-    component: FoodDetailComponent
+    component: FoodDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'manage',
-    component: ManageListComponent
+    component: ManageListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'manage/create',
-    component: ManageCreateComponent
+    component: ManageCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'manage/:id',
-    component: ManageDetailComponent
+    component: ManageDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'manage/:id/edit',
-    component: ManageEditComponent
+    component: ManageEditComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'shopping',
-    component: ShoppingListComponent
+    component: ShoppingListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'shopping/create',
-    component: ShoppingCreateComponent
+    component: ShoppingCreateComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'shopping/:id',
-    component: ShoppingDetailComponent
+    component: ShoppingDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'shopping/:id/edit',
-    component: ShoppingEditComponent
+    component: ShoppingEditComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'shopping/item/:id/edit',
-    component: ShoppingItemEditComponent
+    component: ShoppingItemEditComponent,
+    canActivate: [AuthGuard]
   },
 ];
 
