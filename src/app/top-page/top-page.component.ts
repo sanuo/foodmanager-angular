@@ -5,6 +5,7 @@ import { AuthService } from '../shared/auth.service';
 import { faUtensils, faShoppingBasket, faCogs, faCarrot, faStopwatch, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { FoodManage } from '../model/food-manage.model';
 import { FoodManageService } from '../shared/food-manage/food-manage.service';
+import { ConditionalExpr } from '@angular/compiler';
 
 
 @Component({
@@ -28,6 +29,8 @@ export class TopPageComponent implements OnInit {
 
   foodManages: FoodManage[];
 
+  today: Date;
+
   constructor(
     private auth: AuthStateService,
     private authService: AuthService,
@@ -46,11 +49,14 @@ export class TopPageComponent implements OnInit {
       })
     }
     this.getRemindFoods();
+    this.today = new Date();
   }
 
   getRemindFoods() {
     this.foodManageService.getFoodManagesForReminder().subscribe((data:any) => {
-      this.foodManages = data;
+      if(data.length != 0) {
+        this.foodManages = data;
+      }
       console.dir(this.foodManages);
     })
   }

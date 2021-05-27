@@ -32,11 +32,17 @@
         <div class="reminder">
             <h4 class="text-success"><fa-icon [icon]="faStopwatch" class="mr-1"></fa-icon>消費期限リマインド</h4>
             <div class="container border border-2 rounded">
-                <ul>
+                <h5>今日の日付：{{today | date: 'yyyy/MM/dd'}}</h5>
+                <ul *ngIf="foodManages; else elseBlock">
                     <li *ngFor="let foodManage of foodManages" class="mb-1">
-                        <a href="" class="text-decoration-none"><span class="text-danger"><fa-icon [icon]="faExclamationTriangle" class="ml-1"></fa-icon></span>{{ foodManage.food_master_name }}の消費期限（{{ foodManage.expiration_date | date: 'yyyy/MM/dd'}}）が近づいています。</a>
+                        <a href="" routerLink="manage/{{ foodManage.id }}" class="text-decoration-none"><span class="text-danger"><fa-icon [icon]="faExclamationTriangle" class="ml-1"></fa-icon></span>{{ foodManage.food_master_name }}の消費期限（{{ foodManage.expiration_date | date: 'yyyy/MM/dd'}}）が近づいています。</a>
                     </li>
                 </ul>
+                <ng-template #elseBlock>
+                    <ul>
+                        <li>消費期限の近い食材はありません。</li>
+                    </ul>
+                </ng-template>
             </div>
         </div>
         <div class="d-flex flex-column">
