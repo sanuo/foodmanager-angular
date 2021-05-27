@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user.model';
 import { AuthStateService } from '../shared/auth-state.service';
 import { AuthService } from '../shared/auth.service';
-import { faUtensils, faShoppingBasket, faCogs, faCarrot, faStopwatch, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faShoppingBasket, faCogs, faCarrot, faStopwatch, faExclamationTriangle, faReceipt } from '@fortawesome/free-solid-svg-icons';
 import { FoodManage } from '../model/food-manage.model';
 import { FoodManageService } from '../shared/food-manage/food-manage.service';
-import { ConditionalExpr } from '@angular/compiler';
+import { ShoppingList } from '../model/shopping-list.model';
+import { ShoppingService } from '../shared/shopping/shopping.service';
 
 
 @Component({
@@ -22,19 +23,22 @@ export class TopPageComponent implements OnInit {
   faCogs = faCogs;
   faStopwatch = faStopwatch;
   faExclamationTriangle = faExclamationTriangle;
+  faReceipt = faReceipt;
 
   isSignedIn: boolean;
 
   UserProfile: User;
 
   foodManages: FoodManage[];
+  shoppingLists: ShoppingList[];
 
   today: Date;
 
   constructor(
     private auth: AuthStateService,
     private authService: AuthService,
-    private foodManageService: FoodManageService
+    private foodManageService: FoodManageService,
+    private shoppingService: ShoppingService
   ) {
   }
 
@@ -47,8 +51,10 @@ export class TopPageComponent implements OnInit {
       this.authService.profileUser().subscribe((data:any) => {
         this.UserProfile = data;
       })
+      this.getRemindFoods();
+      this.getShopListsArchive();
     }
-    this.getRemindFoods();
+    
     this.today = new Date();
   }
 
@@ -57,7 +63,15 @@ export class TopPageComponent implements OnInit {
       if(data.length != 0) {
         this.foodManages = data;
       }
-      console.dir(this.foodManages);
+      // console.dir(this.foodManages);
+    })
+  }
+  getShopListsArchive() {
+    this.shoppingService.getRecent().subscribe((data:any) => {
+      if(data.length != 0) {
+        this.shoppingLists = data;
+      }
+      // console.dir(data);
     })
   }
 }

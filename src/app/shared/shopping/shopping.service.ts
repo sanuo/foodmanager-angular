@@ -61,4 +61,9 @@ export class ShoppingService {
   batchRegister(shoppingList: ShoppingList): Observable<any>  {
     return this.http.post(environment.apiUrl + '/shopping_lists/batch_register', shoppingList);
   }
+  
+  //delete ShoppingItem
+  getRecent(): Observable<any> {
+    return this.http.get(environment.apiUrl + '/shopping_lists/getRecent');
+  }
 }

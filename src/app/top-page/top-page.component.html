@@ -33,14 +33,29 @@
             <h4 class="text-success"><fa-icon [icon]="faStopwatch" class="mr-1"></fa-icon>消費期限リマインド</h4>
             <div class="container border border-2 rounded">
                 <h5>今日の日付：{{today | date: 'yyyy/MM/dd'}}</h5>
-                <ul *ngIf="foodManages; else elseBlock">
+                <ul *ngIf="foodManages; else elseReminder">
                     <li *ngFor="let foodManage of foodManages" class="mb-1">
-                        <a href="" routerLink="manage/{{ foodManage.id }}" class="text-decoration-none"><span class="text-danger"><fa-icon [icon]="faExclamationTriangle" class="ml-1"></fa-icon></span>{{ foodManage.food_master_name }}の消費期限（{{ foodManage.expiration_date | date: 'yyyy/MM/dd'}}）が近づいています。</a>
+                        <a href="" routerLink="manage/{{ foodManage.id }}" class="text-decoration-none"><span class="text-danger"><fa-icon [icon]="faExclamationTriangle" class="mr-1"></fa-icon></span>{{ foodManage.food_master_name }}の消費期限（{{ foodManage.expiration_date | date: 'yyyy/MM/dd'}}）が近づいています。</a>
                     </li>
                 </ul>
-                <ng-template #elseBlock>
+                <ng-template #elseReminder>
                     <ul>
                         <li>消費期限の近い食材はありません。</li>
+                    </ul>
+                </ng-template>
+            </div>
+        </div>
+        <div class="reminder">
+            <h4 class="text-success"><fa-icon [icon]="faShoppingBasket" class="mr-1"></fa-icon>最近の買い物リスト</h4>
+            <div class="container border border-2 rounded">
+                <ul *ngIf="shoppingLists; else elseShopping">
+                    <li *ngFor="let shoppingList of shoppingLists" class="mb-1">
+                        <a href="" routerLink="shopping/{{ shoppingList.id }}" class="text-decoration-none"><span class="text-success"><fa-icon [icon]="faReceipt" class="mr-2"></fa-icon></span>{{ shoppingList.created_at | date: 'yyyy/MM/dd'}}作成：{{ shoppingList.title }}</a>
+                    </li>
+                </ul>
+                <ng-template #elseShopping>
+                    <ul>
+                        <li>買い物リストはありません。</li>
                     </ul>
                 </ng-template>
             </div>
