@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FoodManage } from 'src/app/model/food-manage.model';
@@ -34,5 +35,10 @@ export class FoodManageService {
   //delete FoodManage
   deleteFoodManage(id: number): Observable<any>  {
     return this.http.delete(environment.apiUrl + '/food_manages/' + id);
+  }
+
+  //get FoodManages for Reminder
+  getFoodManagesForReminder(): Observable<any> {
+    return this.http.get(environment.apiUrl + '/food_manages/remindFoods');
   }
 }
